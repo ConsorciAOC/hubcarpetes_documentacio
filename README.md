@@ -8,7 +8,7 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
   * [Expedient](#expedient)
     + [Exemple JSON](#exemple-json-1)
     + [Descripcio camps](#descripcio-camps-1)
-  * [Consultes](#consultes)
+- [Consultes](#consultes)
   * [Consulta detallada](#consulta-detallada)
     + [Actuacio](#actuacio-1)
     + [Peticio](#peticio)
@@ -152,9 +152,8 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 | fase | Fase | NO |   
   
   
-### Consultes   
+## Consultes   
 El **hubcarpetes** farà les següents crides als sistemes integrats per consultar les dades necessàries.  
-  
   
 ### Consulta detallada  
     
