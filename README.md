@@ -1,5 +1,5 @@
-# HubCarpetes
-Projecte de documentacio per als integradors del hub de carpetes del Consorci AOC
+# AOC Hub de carpetes ciutadanes
+Projecte de documentacio per als integradors del hub de carpetes ciutadanes del Consorci AOC
 
 - [Model](#model)
   * [Actuacio](#actuacio)
