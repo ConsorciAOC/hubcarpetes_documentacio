@@ -11,34 +11,36 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 - [Consultes](#consultes)
   * [Consulta detallada](#consulta-detallada)
     + [Actuacio](#actuacio-1)
-    + [Peticio](#peticio)
-    + [Descripcio camps](#descripcio-camps-2)
-    + [Exemple peticio](#exemple-peticio)
-    + [Exemple resposta](#exemple-resposta)
-  * [Actuacions](#actuacions)
-    + [Peticio](#peticio-1)
-    + [Descripcio camps](#descripcio-camps-3)
-    + [Exemple peticio](#exemple-peticio-1)
-    + [Exemple resposta](#exemple-resposta-1)
-  * [Expedient](#expedient-1)
-    + [Peticio](#peticio-2)
-    + [Descripcio camps](#descripcio-camps-4)
-    + [Exemple peticio](#exemple-peticio-2)
-    + [Exemple resposta](#exemple-resposta-2)
-  * [Expedients](#expedients)
-    + [Perticio](#perticio)
-    + [Descripcio camps](#descripcio-camps-5)
-    + [Exemple peticio](#exemple-peticio-3)
-    + [Exemple resposta](#exemple-resposta-3)
+      - [Peticio](#peticio)
+      - [Descripcio camps](#descripcio-camps-2)
+      - [Exemple peticio](#exemple-peticio)
+      - [Exemple resposta](#exemple-resposta)
+    + [Actuacions](#actuacions)
+      - [Peticio](#peticio-1)
+      - [Descripcio camps](#descripcio-camps-3)
+      - [Exemple peticio](#exemple-peticio-1)
+      - [Exemple resposta](#exemple-resposta-1)
+    + [Expedient](#expedient-1)
+      - [Peticio](#peticio-2)
+      - [Descripcio camps](#descripcio-camps-4)
+      - [Exemple peticio](#exemple-peticio-2)
+      - [Exemple resposta](#exemple-resposta-2)
+    + [Expedients](#expedients)
+      - [Perticio](#perticio)
+      - [Descripcio camps](#descripcio-camps-5)
+      - [Exemple peticio](#exemple-peticio-3)
+      - [Exemple resposta](#exemple-resposta-3)
   * [Consulta agrupada](#consulta-agrupada)
     + [Peticioo](#peticioo)
     + [Descripcio camps](#descripcio-camps-6)
     + [Exemple peticio](#exemple-peticio-4)
     + [Exemple resposta](#exemple-resposta-4)
 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 
 ## Model
-
 
 ### Actuacio
 
@@ -160,19 +162,18 @@ El **hubcarpetes** farà les següents crides als sistemes integrats per consult
 #### Actuacio  
 Retorna el detall d'una actuacio única 
 
-#### Peticio
+##### Peticio
 ` GET /consultaActuacioDetallada?{identificacio}`  
   
-#### Descripcio camps 
+##### Descripcio camps 
 |  Parametre | Obligatori |  
 |---|---|  
 |identificacio|SI|  
   
-#### Exemple peticio
+##### Exemple peticio
 ` GET /consultaActuacioDetallada?identificacio=3fh54h6hfh4h43jd24354`  
-  
-  
-#### Exemple resposta 
+    
+##### Exemple resposta 
 ```json   
 {
    "id":"25447",
@@ -199,13 +200,13 @@ Retorna el detall d'una actuacio única
 }
  ```  
     
-### Actuacions  
+#### Actuacions  
 Retorna el detall d'una o més actuacions  
   
-#### Peticio  
+##### Peticio  
 ` GET /consultaActuacionsDetallada?{documentIdentificatiu,codiINE10,dataInici,dataFi}`  
   
-#### Descripcio camps   
+##### Descripcio camps   
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | documentIdentificatiu | SI |   
@@ -216,10 +217,10 @@ Retorna el detall d'una o més actuacions
 | tipus | NO |   
   
   
-#### Exemple peticio  
+##### Exemple peticio  
 ` GET /consultaActuacionsDetallada?documentIdentificatiu=12345678A&codiINE10=987645&dataInici=2020-10-02&dataFi=2021-10-02&tipus=ENTRADA` 
     
-#### Exemple resposta 
+##### Exemple resposta 
 ```json  
 {
    "id":"377",
@@ -250,22 +251,21 @@ Retorna el detall d'una o més actuacions
 }
 ``` 
    
-### Expedient  
+#### Expedient  
 Retorna el detall d'un expedient únic  
 
-#### Peticio  
+##### Peticio  
 ` GET /consultaExpedientDetallada?{identificador}`  
   
-#### Descripcio camps   
+##### Descripcio camps   
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | identificador | SI |   
   
-
-#### Exemple peticio
+##### Exemple peticio
 ` GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
   
-#### Exemple resposta 
+##### Exemple resposta 
 ```json  
 {
    "id":"377",
@@ -296,13 +296,13 @@ Retorna el detall d'un expedient únic
 }
 ```  
   
-### Expedients  
+#### Expedients  
 Retorna el detall d'un o més expedients  
   
-#### Perticio  
+##### Perticio  
 ` GET /consultaExpedientsDetallada?{documentIdentificatiu,codiINE10,codiDIR3,dataInici,dataFi,estat}`  
   
-#### Descripcio camps   
+##### Descripcio camps   
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | documentIdentificatiu | SI |   
@@ -311,12 +311,11 @@ Retorna el detall d'un o més expedients
 | dataInici | NO |   
 | dataFi | NO |   
 | estat | NO (OBERT,TANCAT) |   
-  
-  
-#### Exemple peticio  
+   
+##### Exemple peticio  
 ` GET /consultaExpedientsDetallada?documentIdentificatiu=34867564R&codiINE10=2345654&dataInici=2020-10-21&dataFi=2021-10-21&estat=OBERT}`  
 
-#### Exemple resposta  
+##### Exemple resposta  
 ```json  
 {
    "codiResultat":"codiOK",
@@ -451,3 +450,4 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
    ]
 }
  ```  
+ 
