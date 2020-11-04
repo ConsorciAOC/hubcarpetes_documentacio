@@ -31,7 +31,7 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
       - [Exemple peticio](#exemple-peticio-3)
       - [Exemple resposta](#exemple-resposta-3)
   * [Consulta agrupada](#consulta-agrupada)
-    + [Peticioo](#peticioo)
+    + [Peticio](#peticioo)
     + [Descripcio camps](#descripcio-camps-6)
     + [Exemple peticio](#exemple-peticio-4)
     + [Exemple resposta](#exemple-resposta-4)
@@ -377,7 +377,7 @@ Retorna el detall d'un o més expedients
 ### Consulta agrupada  
 Retorna un resum quantitatiu de les actuacions i/o expedients donat un document identificatiu. En el cas de les actuacions agrupades segons el tipus, entrada o sortida. I en el cas dels expedients, agrupats per estat.  
   
-#### Peticioo
+#### Peticio
 ` GET /consultaAgrupada?{documentIdentificatiu, codiINE10,codiDIR3}`  
   
 #### Descripcio camps   
