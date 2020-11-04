@@ -3,7 +3,7 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 
 - [Model](#model)
   * [Actuacio](#actuacio)
-  * [Exemple JSON](#exemple-json)
+    + [Exemple JSON](#exemple-json)
     + [Descripcio camps](#descripcio-camps)
   * [Expedient](#expedient)
     + [Exemple JSON](#exemple-json-1)
@@ -42,7 +42,7 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 
 ### Actuacio
 
-### Exemple JSON
+#### Exemple JSON
 ```json  
 {
    "id":"13576",
@@ -74,7 +74,6 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 }
 ```  
 
-
 #### Descripcio camps  
 |       Parametre      | Descripcio | Obligatori |  
 | ----------------------| --- | --- |  
@@ -96,8 +95,7 @@ Projecte de documentacio per als integradors del hub de carpetes del Consorci AO
 | adreca                 | Adreça | ? |  
 | correuElectronic       | Correu electrònic | ? |  
 | observacionsInteressat | Observacions interessat | NO |  
-  
-  
+    
 ### Expedient  
 
 #### Exemple JSON
