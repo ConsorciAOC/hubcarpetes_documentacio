@@ -139,7 +139,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | id |  identificador intern  | ? |   
 | identificador | Identificador únic | SI |   
 | assumpte | Assumpte |  SI  |   
-| codiDIR3OrganResponsable | Codi DIR3 òrgan responsable | SI (ENTRADA, SORTIDA) |   
+| codiDIR3OrganResponsable | Codi DIR3 òrgan responsable | SI |   
 | codiDIR3Organisme | Codi DIR3 organisme | SI |   
 | procediment | Procediment |  SI |   
 | dataInici | Data inici | SI |   
