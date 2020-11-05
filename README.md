@@ -1,5 +1,6 @@
 # AOC Hub de carpetes ciutadanes
-Projecte de documentacio per als integradors del hub de carpetes ciutadanes del Consorci AOC
+Projecte de documentacio per als integradors del hub de carpetes ciutadanes del Consorci AOC.
+_Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 - [Model](#model)
   * [Actuacio](#actuacio)
