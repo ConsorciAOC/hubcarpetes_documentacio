@@ -51,11 +51,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 ```json  
 {
    "codiINE10":"658",
-   "persones":[
-      {         
-         "tipus":"REPRESENTANT"
-      }
-   ],
+   "codiDIR3Organisme":"34554",
+   "tipusPersona":"REPRESENTANT",
    "tipus":"ENTRADA",
    "identificador":"abc371",
    "dataActuacio":1604401681121,
@@ -146,11 +143,11 @@ El **hubcarpetes** farà les següents crides als sistemes integrats per consult
     
 #### Actuacio  
 
-Retorna el detall d'una actuacio única 
+Retorna el detall d'una actuacio única a partir del seu identificador
 
 ##### Peticio
 
-` GET /consultaActuacioDetallada?{identificador,codiINE10}`  
+` GET /consultaActuacioDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
   
 ##### Descripcio camps 
 
@@ -158,7 +155,8 @@ Retorna el detall d'una actuacio única
 |---|---|  
 |identificador|SI|  
 |codiINE10|NO|
-  
+|codiDir3Organisme|NO|
+
 ##### Exemple peticio
 
 ` GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
@@ -227,7 +225,7 @@ Retorna el detall d'una o més actuacions
    
 #### Expedient  
 
-Retorna el detall d'un expedient únic  
+Retorna el detall d'un expedient únic a partir del seu identificador
 
 ##### Peticio  
 
@@ -300,7 +298,6 @@ Retorna el detall d'un o més expedients
       {
          "identificador":"id_65",
          "assumpte":"assumpte...",
-         "codiDIR3OrganResponsable":"492",
          "codiDIR3Organisme":"973",
          "procediment":"procediment...",
          "dataInici":1604401681254,
@@ -319,7 +316,6 @@ Retorna el detall d'un o més expedients
       {
          "identificador":"id_82",
          "assumpte":"assumpte...",
-         "codiDIR3OrganResponsable":"733",
          "codiDIR3Organisme":"338",
          "procediment":"procediment...",
          "dataInici":1604401681254,
