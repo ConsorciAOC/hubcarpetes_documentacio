@@ -47,80 +47,62 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 ### Actuacio
 
 #### Exemple JSON
+
 ```json  
 {
-   "id":"13576",
    "codiINE10":"658",
    "persones":[
-      {
-         "nom":"nom2",
-         "cognoms":"cognoms2",
-         "numeroIdentificatiu":"43434343A",
+      {         
          "tipus":"REPRESENTANT"
       }
    ],
    "tipus":"ENTRADA",
-   "identificacio":"abc371",
-   "dataRegistre":1604401681121,
+   "identificador":"abc371",
+   "dataActuacio":1604401681121,
    "assumpte":"Assumpte...",
    "url":"www.abc.com/698",
    "viaPresentacio":"Via...",
    "numeroExpedient":"225",
    "procediment":"Procediment...",
    "observacions":"Obs...",
-   "referenciaExterna":"Referencia....",
-   "notificacio":{
-      "canalPreferent":"COMPAREIXENCA_ELECTRONICA",
-      "adreca":"adreca",
-      "correuElectronic":"correu"
-   },
-   "observacionsInteressat":"Obs interessat"
+   "referenciaExterna":"Referencia....",   
+   "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA"
 }
 ```  
 
 #### Descripcio camps  
+
 |       Parametre      | Descripcio | Obligatori |  
 | ----------------------| --- | --- |  
-| id                     | identificador intern | ? |  
-| codiINE10              | Codi INE10 | SI |  
-| persones               | Llista de persones. Pot tenir 1 interessat o interessat i representant) | SI |  
+| codiINE10              | Codi INE10 | NO |  
+| codiDIR3Organisme      | Codi DIR3 | NO |
+| tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
 | tipus                  | Tipus d'actuacio | SI (ENTRADA, SORTIDA)|  
-| identificacio          | Identifiador únic | SI |  
-| dataRegistre           | Data registre | SI |  
+| identificador          | Identificador únic | SI |  
+| dataActuacio           | Data de l'actuació o la data registre segons apliqui | SI |  
 | assumpte               | Assumpte | SI |  
 | url                    | URL | SI |  
 | viaPresentacio         | Via presentacio | NO |  
 | numeroExpedient        | Numero de l'expedient | NO |  
 | procediment            | Procediment| NO |  
 | observacions           | Observacions| NO |  
-| referenciaExterna      | Referencia externa | NO |  
-| notificacio            | Dades de notificacio | NO |  
-| canalPreferent         | Canal preferent | SI (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
-| adreca                 | Adreça | ? |  
-| correuElectronic       | Correu electrònic | ? |  
-| observacionsInteressat | Observacions interessat | NO |  
+| referenciaExterna      | Referencia externa | NO |
+| canalPreferentNotificacio         | Canal preferent | SI (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
     
 ### Expedient  
 
 #### Exemple JSON
+
 ```json  
 {
-   "id":"377",
    "identificador":"id_43",
-   "assumpte":"assumpte",
-   "codiDIR3OrganResponsable":"827",
+   "assumpte":"assumpte",   
+   "codiINE10": "1234",
    "codiDIR3Organisme":"789",
    "procediment":"procediment",
    "dataInici":1604401681254,
    "url":"www.test.com",
-   "persones":[
-      {
-         "nom":"nom2",
-         "cognoms":"cognoms2",
-         "numeroIdentificatiu":"43434343A",
-         "tipus":"INTERESSAT"
-      }
-   ],
+   "tipusPersona":"INTERESSAT",
    "familia":"F1",
    "dataPrevistaResolucio":1604401681254,
    "descripcioFase":"Descripcio",
@@ -134,17 +116,17 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 ```  
  
 #### Descripcio camps  
+
 |   Parametre  |  Descripcio  |  Obligatori  |   
 | --- | --- | --- |   
-| id |  identificador intern  | ? |   
 | identificador | Identificador únic | SI |   
 | assumpte | Assumpte |  SI  |   
-| codiDIR3OrganResponsable | Codi DIR3 òrgan responsable | SI |   
-| codiDIR3Organisme | Codi DIR3 organisme | SI |   
+| codiINE10 | Codi INE10 | NO |
+| codiDIR3Organisme | Codi DIR3 organisme | NO |   
 | procediment | Procediment |  SI |   
 | dataInici | Data inici | SI |   
 | url | URL | SI |   
-| familia |  Via presentacio  | NO |   
+| familia |  Familia  | NO |   
 | dataPrevistaResolucio | Data prevista resolucio | NO |   
 | dataFinalitzacio | Data finalitzacio | NO |   
 | descripcioFase | Descripcio fase | NO |   
@@ -157,43 +139,36 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
   
   
 ## Consultes   
+
 El **hubcarpetes** farà les següents crides als sistemes integrats per consultar les dades necessàries.  
   
 ### Consulta detallada  
     
 #### Actuacio  
+
 Retorna el detall d'una actuacio única 
 
 ##### Peticio
-` GET /consultaActuacioDetallada?{identificacio}`  
+
+` GET /consultaActuacioDetallada?{identificador,codiINE10}`  
   
 ##### Descripcio camps 
+
 |  Parametre | Obligatori |  
 |---|---|  
-|identificacio|SI|  
+|identificador|SI|  
+|codiINE10|NO|
   
 ##### Exemple peticio
-` GET /consultaActuacioDetallada?identificacio=3fh54h6hfh4h43jd24354`  
+
+` GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
     
 ##### Exemple resposta 
+
 ```json   
 {
-   "id":"25447",
    "codiINE10":"703",
-   "persones":[
-      {
-         "nom":"nom3",
-         "cognoms":"cognoms3",
-         "numeroIdentificatiu":"00000000A",
-         "tipus":"INTERESSAT"
-      },
-      {
-         "nom":"nom1",
-         "cognoms":"cognoms1",
-         "numeroIdentificatiu":"12345678A",
-         "tipus":"REPRESENTANT"
-      }
-   ],
+   "tipusPersona":"INTERESSAT",
    "tipus":"ENTRADA",
    "identificacio":"abc768",
    "dataRegistre":1604401681121,
@@ -202,16 +177,19 @@ Retorna el detall d'una actuacio única
 }
  ```  
     
-#### Actuacions  
+#### Actuacions
+
 Retorna el detall d'una o més actuacions  
   
 ##### Peticio  
-` GET /consultaActuacionsDetallada?{documentIdentificatiu,codiINE10,dataInici,dataFi}`  
+
+` GET /consultaActuacionsDetallada?{documentIdentificador,codiINE10,codiDIR3,dataInici,dataFi}`  
   
 ##### Descripcio camps   
+
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
-| documentIdentificatiu | SI |   
+| documentIdentificador | SI |   
 | codiINE10 | NO |   
 | codiDIR3 | NO |   
 | dataInici | NO |   
@@ -220,27 +198,21 @@ Retorna el detall d'una o més actuacions
   
   
 ##### Exemple peticio  
-` GET /consultaActuacionsDetallada?documentIdentificatiu=12345678A&codiINE10=987645&dataInici=2020-10-02&dataFi=2021-10-02&tipus=ENTRADA` 
+
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=987645&dataInici=2020-10-02&dataFi=2021-10-02&tipus=ENTRADA` 
     
 ##### Exemple resposta 
+
 ```json  
 {
-   "id":"377",
    "identificador":"id_43",
    "assumpte":"assumpte...",
-   "codiDIR3OrganResponsable":"827",
+   "codiINE10": "2343"
    "codiDIR3Organisme":"789",
    "procediment":"procediment...",
    "dataInici":1604401681254,
    "url":"www.test.com",
-   "persones":[
-      {
-         "nom":"nom2",
-         "cognoms":"cognoms2",
-         "numeroIdentificatiu":"43434343A",
-         "tipus":"INTERESSAT"
-      }
-   ],
+   "tipusPersona":"INTERESSAT",
    "familia":"F1",
    "dataPrevistaResolucio":1604401681254,
    "descripcioFase":"Descripcio...",
@@ -254,38 +226,35 @@ Retorna el detall d'una o més actuacions
 ``` 
    
 #### Expedient  
+
 Retorna el detall d'un expedient únic  
 
 ##### Peticio  
+
 ` GET /consultaExpedientDetallada?{identificador}`  
   
 ##### Descripcio camps   
+
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | identificador | SI |   
   
 ##### Exemple peticio
+
 ` GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
   
 ##### Exemple resposta 
+
 ```json  
 {
-   "id":"377",
    "identificador":"id_43",
    "assumpte":"assumpte...",
-   "codiDIR3OrganResponsable":"827",
+   "codiINE10":"827",
    "codiDIR3Organisme":"789",
    "procediment":"procediment...",
    "dataInici":1604401681254,
    "url":"www.test.com",
-   "persones":[
-      {
-         "nom":"nom2",
-         "cognoms":"cognoms2",
-         "numeroIdentificatiu":"43434343A",
-         "tipus":"INTERESSAT"
-      }
-   ],
+   "tipusPersona":"INTERESSAT",
    "familia":"F1",
    "dataPrevistaResolucio":1604401681254,
    "descripcioFase":"Descripcio...",
@@ -299,15 +268,18 @@ Retorna el detall d'un expedient únic
 ```  
   
 #### Expedients  
+
 Retorna el detall d'un o més expedients  
   
 ##### Perticio  
-` GET /consultaExpedientsDetallada?{documentIdentificatiu,codiINE10,codiDIR3,dataInici,dataFi,estat}`  
+
+` GET /consultaExpedientsDetallada?{documentIdentificador,codiINE10,codiDIR3,dataInici,dataFi,estat}`  
   
 ##### Descripcio camps   
+
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
-| documentIdentificatiu | SI |   
+| documentIdentificador | SI |   
 | codiINE10 | NO |   
 | codiDIR3 | NO |   
 | dataInici | NO |   
@@ -315,16 +287,17 @@ Retorna el detall d'un o més expedients
 | estat | NO (OBERT,TANCAT) |   
    
 ##### Exemple peticio  
-` GET /consultaExpedientsDetallada?documentIdentificatiu=34867564R&codiINE10=2345654&dataInici=2020-10-21&dataFi=2021-10-21&estat=OBERT}`  
 
-##### Exemple resposta  
+` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&codiINE10=2345654&dataInici=2020-10-21&dataFi=2021-10-21&estat=OBERT}`  
+
+##### Exemple resposta 
+
 ```json  
 {
    "codiResultat":"codiOK",
    "descripcioResultat":"Descripcio",
    "expedients":[
       {
-         "id":"151",
          "identificador":"id_65",
          "assumpte":"assumpte...",
          "codiDIR3OrganResponsable":"492",
@@ -332,14 +305,7 @@ Retorna el detall d'un o més expedients
          "procediment":"procediment...",
          "dataInici":1604401681254,
          "url":"www.test.com",
-         "persones":[
-            {
-               "nom":"nom2",
-               "cognoms":"cognoms2",
-               "numeroIdentificatiu":"43434343A",
-               "tipus":"REPRESENTANT"
-            }
-         ],
+         "tipusPersona":"REPRESENTANT",
          "familia":"F1",
          "dataPrevistaResolucio":1604401681254,
          "descripcioFase":"Descripcio...",
@@ -351,7 +317,6 @@ Retorna el detall d'un o més expedients
          "fase":"fase"
       },
       {
-         "id":"802",
          "identificador":"id_82",
          "assumpte":"assumpte...",
          "codiDIR3OrganResponsable":"733",
@@ -359,14 +324,7 @@ Retorna el detall d'un o més expedients
          "procediment":"procediment...",
          "dataInici":1604401681254,
          "url":"www.test.com",
-         "persones":[
-            {
-               "nom":"nom2",
-               "cognoms":"cognoms2",
-               "numeroIdentificatiu":"43434343A",
-               "tipus":"REPRESENTANT"
-            }
-         ],
+         "tipusPersona":"REPRESENTANT",
          "estat":"OBERT"
       },
       {
@@ -377,32 +335,35 @@ Retorna el detall d'un o més expedients
 ```  
 
 ### Consulta agrupada  
-Retorna un resum quantitatiu de les actuacions i/o expedients donat un document identificatiu. En el cas de les actuacions agrupades segons el tipus, entrada o sortida. I en el cas dels expedients, agrupats per estat.  
+
+Retorna un resum quantitatiu de les actuacions i/o expedients donat un document identificador. En el cas de les actuacions agrupades segons el tipus, entrada o sortida. I en el cas dels expedients, agrupats per estat.  
   
 #### Peticio
-` GET /consultaAgrupada?{documentIdentificatiu, codiINE10,codiDIR3}`  
+
+` GET /consultaAgrupada?{documentIdentificador,codiINE10,codiDIR3}`  
   
 #### Descripcio camps   
+
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
-| documentIdentificatiu | SI |   
+| documentIdentificador | SI |   
 | codiINE10 | NO |   
 | codiDIR3 | NO |   
   
 #### Exemple peticio   
-` GET /consultaAgrupada?documentIdentificatiu=98906049A&codiINE10=34668342`  
+
+` GET /consultaAgrupada?documentIdentificador=98906049A&codiINE10=34668342`  
   
 #### Exemple resposta 
+
 ```json  
  {
    "codiResultat":"codiOK",
    "descripcioResultat":"Descripcio resultat",
-   "valorDocumentIdentificacio":"98906049A",
-   "tipusDocumentIdentificacio":"NIF",
+   "documentIdentificador":"98906049A",   
    "agrupacions":[
       {
-         "codiEns":"34668342",
-         "tipusCodiEns":"INE10",
+         "codiINE10":"34668342", 
          "agrupacioActuacions":{
             "entrades":{
                "numTotal":9,
