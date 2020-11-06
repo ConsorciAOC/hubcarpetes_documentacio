@@ -1,5 +1,5 @@
 # AOC Hub de carpetes ciutadanes
-Projecte de documentacio per als integradors del hub de carpetes ciutadanes del Consorci AOC.
+Projecte de documentació per als integradors del hub de carpetes ciutadanes del Consorci AOC.
 
 _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
@@ -71,8 +71,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 |       Parametre      | Descripcio | Obligatori |  
 | ----------------------| --- | --- |  
-| codiINE10              | Codi INE10 | NO |  
-| codiDIR3Organisme      | Codi DIR3 | NO |
+| codiINE10              | Codi INE10 | NO (si s'ha inidicat el codiINE10) |  
+| codiDIR3Organisme      | Codi DIR3 | NO (si s'ha inidicat el codiDIR3Organisme) |
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
 | tipus                  | Tipus d'actuacio | SI (ENTRADA, SORTIDA)|  
 | identificador          | Identificador únic | SI |  
@@ -84,7 +84,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | procediment            | Procediment| NO |  
 | observacions           | Observacions| NO |  
 | referenciaExterna      | Referencia externa | NO |
-| canalPreferentNotificacio         | Canal preferent | SI (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
+| canalPreferentNotificacio         | Canal preferent | NO (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
     
 ### Expedient  
 
@@ -118,8 +118,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | --- | --- | --- |   
 | identificador | Identificador únic | SI |   
 | assumpte | Assumpte |  SI  |   
-| codiINE10 | Codi INE10 | NO |
-| codiDIR3Organisme | Codi DIR3 organisme | NO |   
+| codiINE10 | Codi INE10 | NO (si s'ha inidicat el codiINE10)|
+| codiDIR3Organisme | Codi DIR3 organisme | NO (si s'ha inidicat el codiDIR3Organisme)|   
 | procediment | Procediment |  SI |   
 | dataInici | Data inici | SI |   
 | url | URL | SI |   
@@ -181,7 +181,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Peticio  
 
-` GET /consultaActuacionsDetallada?{documentIdentificador,codiINE10,codiDIR3,dataInici,dataFi}`  
+` GET /consultaActuacionsDetallada?{documentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
   
 ##### Descripcio camps   
 
@@ -189,7 +189,7 @@ Retorna el detall d'una o més actuacions
 | --- | --- |   
 | documentIdentificador | SI |   
 | codiINE10 | NO |   
-| codiDIR3 | NO |   
+| codiDIR3Organisme | NO |   
 | dataInici | NO |   
 | dataFi | NO |   
 | tipus | NO |   
@@ -229,13 +229,15 @@ Retorna el detall d'un expedient únic a partir del seu identificador
 
 ##### Peticio  
 
-` GET /consultaExpedientDetallada?{identificador}`  
+` GET /consultaExpedientDetallada?{identificador, codiINE10, codiDIR3Organisme}`  
   
 ##### Descripcio camps   
 
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | identificador | SI |   
+| codiINE10 | NO |   
+| codiDIR3Organisme | NO |   
   
 ##### Exemple peticio
 
@@ -271,7 +273,7 @@ Retorna el detall d'un o més expedients
   
 ##### Perticio  
 
-` GET /consultaExpedientsDetallada?{documentIdentificador,codiINE10,codiDIR3,dataInici,dataFi,estat}`  
+` GET /consultaExpedientsDetallada?{documentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat}`  
   
 ##### Descripcio camps   
 
@@ -279,7 +281,7 @@ Retorna el detall d'un o més expedients
 | --- | --- |   
 | documentIdentificador | SI |   
 | codiINE10 | NO |   
-| codiDIR3 | NO |   
+| codiDIR3Organisme | NO |   
 | dataInici | NO |   
 | dataFi | NO |   
 | estat | NO (OBERT,TANCAT) |   
@@ -344,7 +346,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
 | --- | --- |   
 | documentIdentificador | SI |   
 | codiINE10 | NO |   
-| codiDIR3 | NO |   
+| codiDIR3Organisme | NO |   
   
 #### Exemple peticio   
 
