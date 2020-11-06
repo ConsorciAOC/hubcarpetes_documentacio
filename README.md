@@ -71,8 +71,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 |       Parametre      | Descripcio | Obligatori |  
 | ----------------------| --- | --- |  
-| codiINE10              | Codi INE10 | NO (si s'ha inidicat el codiINE10) |  
-| codiDIR3Organisme      | Codi DIR3 | NO (si s'ha inidicat el codiDIR3Organisme) |
+| codiINE10              | Codi INE10 | NO (si s'ha inidicat el codiDIR3Organisme) |  
+| codiDIR3Organisme      | Codi DIR3 | NO (si s'ha inidicat el codiINE10) |
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
 | tipus                  | Tipus d'actuacio | SI (ENTRADA, SORTIDA)|  
 | identificador          | Identificador únic | SI |  
@@ -118,8 +118,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | --- | --- | --- |   
 | identificador | Identificador únic | SI |   
 | assumpte | Assumpte |  SI  |   
-| codiINE10 | Codi INE10 | NO (si s'ha inidicat el codiINE10)|
-| codiDIR3Organisme | Codi DIR3 organisme | NO (si s'ha inidicat el codiDIR3Organisme)|   
+| codiINE10 | Codi INE10 | NO (si s'ha inidicat el codiDIR3Organisme)|
+| codiDIR3Organisme | Codi DIR3 organisme | NO (si s'ha inidicat el codiINE10)|   
 | procediment | Procediment |  SI |   
 | dataInici | Data inici | SI |   
 | url | URL | SI |   
