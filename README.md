@@ -300,6 +300,7 @@ Retorna el detall d'un o més expedients
       {
          "identificador":"id_65",
          "assumpte":"Assumpte",
+         "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "procediment":"Procediment",
          "dataInici":"2020-04-24T01:25:43.987Z",
@@ -318,7 +319,8 @@ Retorna el detall d'un o més expedients
       {
          "identificador":"id_82",
          "assumpte":"Assumpte",
-         "codiDIR3Organisme":"338",
+         "codiINE10":"9821920002",
+         "codiDIR3Organisme":"L01080193",
          "procediment":"Procediment",
          "dataInici":"2020-01-26T14:25:43.001Z",
          "url":"http://www.test.com",
