@@ -155,7 +155,7 @@ Retorna el detall d'una actuacio única a partir del seu identificador
 |---|---|  
 |identificador|SI|  
 |codiINE10|NO|
-|codiDir3Organisme|NO|
+|codiDIR3Organisme|NO|
 
 ##### Exemple peticio
 
