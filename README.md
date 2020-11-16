@@ -197,7 +197,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Exemple peticio  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z"&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
     
 ##### Exemple resposta 
 
@@ -205,7 +205,7 @@ Retorna el detall d'una o més actuacions
 {
    "identificador":"id_43",
    "assumpte":"Assumpte",
-   "codiINE10": "9821920002"
+   "codiINE10":"9821920002"
    "codiDIR3Organisme":"L01080193",
    "procediment":"Procediment",
    "dataInici":"2020-05-23T18:25:43.511Z",
