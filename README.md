@@ -97,16 +97,16 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
    "codiINE10": "9821920002",
    "codiDIR3Organisme":"L01080193",
    "procediment":"procediment",
-   "dataInici":2020-04-23T18:25:43.511Z,
+   "dataInici": "2020-04-23T18:25:43.511Z",
    "url":"www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":2020-04-24T18:25:43.511Z,
+   "dataPrevistaResolucio":"2020-04-24T18:25:43.511Z",
    "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
    "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":2020-01-23T18:25:43.511Z,
+   "dataRegistre":"2020-01-23T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -169,7 +169,7 @@ Retorna el detall d'una actuacio única a partir del seu identificador
    "tipusPersona":"INTERESSAT",
    "tipus":"ENTRADA",
    "identificador":"3fh54h6hfh4h43jd24354",
-   "dataRegistre":2020-04-24T18:25:43.511Z,
+   "dataRegistre":"2020-04-24T18:25:43.511Z",
    "assumpte":"Assumpte",
    "url":"http://www.abc.com/28"
 }
@@ -197,7 +197,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Exemple peticio  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z"&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
     
 ##### Exemple resposta 
 
@@ -208,16 +208,16 @@ Retorna el detall d'una o més actuacions
    "codiINE10": "9821920002"
    "codiDIR3Organisme":"L01080193",
    "procediment":"Procediment",
-   "dataInici":2020-05-23T18:25:43.511Z,
+   "dataInici":"2020-05-23T18:25:43.511Z",
    "url":"http://www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":2022-04-23T18:25:43.511Z,
+   "dataPrevistaResolucio":"2022-04-23T18:25:43.511Z",
    "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
    "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":2020-05-22T18:25:43.511Z,
+   "dataRegistre":"2020-05-22T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -252,16 +252,16 @@ Retorna el detall d'un expedient únic a partir del seu identificador
    "codiINE10":"9821920002",
    "codiDIR3Organisme":"L01080193",
    "procediment":"Procediment",
-   "dataInici":2020-04-23T18:25:43.511Z,
+   "dataInici":"2020-04-23T18:25:43.511Z",
    "url":"http://www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":2020-05-23T18:25:43.511Z,
+   "dataPrevistaResolucio":"2020-05-23T18:25:43.511Z",
    "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
    "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":2020-04-24T18:25:43.511Z,
+   "dataRegistre":"2020-04-24T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -302,16 +302,16 @@ Retorna el detall d'un o més expedients
          "assumpte":"Assumpte",
          "codiDIR3Organisme":"L01080193",
          "procediment":"Procediment",
-         "dataInici":2020-04-24T01:25:43.987Z,
+         "dataInici":"2020-04-24T01:25:43.987Z",
          "url":"http://www.test.com",
          "tipusPersona":"REPRESENTANT",
          "familia":"F1",
-         "dataPrevistaResolucio":2020-04-26T08:25:43.123Z,
+         "dataPrevistaResolucio":"2020-04-26T08:25:43.123Z",
          "descripcioFase":"Descripcio",
          "estat":"OBERT",
          "obervacions":"Observacions",
          "numeroRegistre":"NUM_43",
-         "dataRegistre":2020-04-23T18:25:43.511Z,
+         "dataRegistre":"2020-04-23T18:25:43.511Z",
          "actuacioCiutada":"NO_APLICA",
          "fase":"fase"
       },
@@ -320,7 +320,7 @@ Retorna el detall d'un o més expedients
          "assumpte":"Assumpte",
          "codiDIR3Organisme":"338",
          "procediment":"Procediment",
-         "dataInici":2020-01-26T14:25:43.001Z,
+         "dataInici":"2020-01-26T14:25:43.001Z",
          "url":"http://www.test.com",
          "tipusPersona":"REPRESENTANT",
          "estat":"OBERT"
