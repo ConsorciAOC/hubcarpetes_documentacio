@@ -50,19 +50,19 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 ```json  
 {
-   "codiINE10":"658",
-   "codiDIR3Organisme":"34554",
+   "codiINE10":"9821920002",
+   "codiDIR3Organisme":"L01080193",
    "tipusPersona":"REPRESENTANT",
    "tipus":"ENTRADA",
    "identificador":"abc371",
-   "dataActuacio":1604401681121,
-   "assumpte":"Assumpte...",
+   "dataActuacio":2012-04-23T18:25:43.511Z,
+   "assumpte":"Assumpte",
    "url":"www.abc.com/698",
-   "viaPresentacio":"Via...",
+   "viaPresentacio":"Via",
    "numeroExpedient":"225",
-   "procediment":"Procediment...",
-   "observacions":"Obs...",
-   "referenciaExterna":"Referencia....",   
+   "procediment":"Procediment",
+   "observacions":"Observacions",
+   "referenciaExterna":"Referencia",   
    "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA"
 }
 ```  
@@ -76,7 +76,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
 | tipus                  | Tipus d'actuacio | SI (ENTRADA, SORTIDA)|  
 | identificador          | Identificador únic | SI |  
-| dataActuacio           | Data de l'actuació o la data registre segons apliqui | SI |  
+| dataActuacio           | Data de l'actuació o la data registre segons apliqui. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |  
 | assumpte               | Assumpte | SI |  
 | url                    | URL | SI |  
 | viaPresentacio         | Via presentacio | NO |  
@@ -94,19 +94,19 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 {
    "identificador":"id_43",
    "assumpte":"assumpte",   
-   "codiINE10": "1234",
-   "codiDIR3Organisme":"789",
+   "codiINE10": "9821920002",
+   "codiDIR3Organisme":"L01080193",
    "procediment":"procediment",
-   "dataInici":1604401681254,
+   "dataInici":2020-04-23T18:25:43.511Z,
    "url":"www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":1604401681254,
+   "dataPrevistaResolucio":2020-04-24T18:25:43.511Z,
    "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
    "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":1604401681254,
+   "dataRegistre":2020-01-23T18:25:43.511Z,
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -121,16 +121,16 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | codiINE10 | Codi INE10 | NO (si s'ha inidicat el codiDIR3Organisme)|
 | codiDIR3Organisme | Codi DIR3 organisme | NO (si s'ha inidicat el codiINE10)|   
 | procediment | Procediment |  SI |   
-| dataInici | Data inici | SI |   
+| dataInici | Data inici. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |   
 | url | URL | SI |   
 | familia |  Familia  | NO |   
 | dataPrevistaResolucio | Data prevista resolucio | NO |   
-| dataFinalitzacio | Data finalitzacio | NO |   
+| dataFinalitzacio | Data finalitzacio. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
 | descripcioFase | Descripcio fase | NO |   
 | estat | Estat | NO (OBERT,FINALITZAT) |   
 | obervacions | Observacions | NO |   
 | numeroRegistre | Número de registre | NO |   
-| dataRegistre | Data registre | NO |   
+| dataRegistre | Data registre. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
 | actuacioCiutada | NO (SI, NO, NO_APLICA) |   
 | fase | Fase | NO |   
   
@@ -165,13 +165,13 @@ Retorna el detall d'una actuacio única a partir del seu identificador
 
 ```json   
 {
-   "codiINE10":"703",
+   "codiINE10":"9821920002",
    "tipusPersona":"INTERESSAT",
    "tipus":"ENTRADA",
-   "identificacio":"abc768",
-   "dataRegistre":1604401681121,
-   "assumpte":"Assumpte...",
-   "url":"www.abc.com/28"
+   "identificador":"3fh54h6hfh4h43jd24354",
+   "dataRegistre":2020-04-24T18:25:43.511Z,
+   "assumpte":"Assumpte",
+   "url":"http://www.abc.com/28"
 }
  ```  
     
@@ -197,27 +197,27 @@ Retorna el detall d'una o més actuacions
   
 ##### Exemple peticio  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=987645&dataInici=2020-10-02&dataFi=2021-10-02&tipus=ENTRADA` 
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
     
 ##### Exemple resposta 
 
 ```json  
 {
    "identificador":"id_43",
-   "assumpte":"assumpte...",
-   "codiINE10": "2343"
-   "codiDIR3Organisme":"789",
-   "procediment":"procediment...",
-   "dataInici":1604401681254,
-   "url":"www.test.com",
+   "assumpte":"Assumpte",
+   "codiINE10": "9821920002"
+   "codiDIR3Organisme":"L01080193",
+   "procediment":"Procediment",
+   "dataInici":2020-05-23T18:25:43.511Z,
+   "url":"http://www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":1604401681254,
-   "descripcioFase":"Descripcio...",
+   "dataPrevistaResolucio":2022-04-23T18:25:43.511Z,
+   "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
-   "obervacions":"Observacions...",
+   "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":1604401681254,
+   "dataRegistre":2020-05-22T18:25:43.511Z,
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -248,20 +248,20 @@ Retorna el detall d'un expedient únic a partir del seu identificador
 ```json  
 {
    "identificador":"id_43",
-   "assumpte":"assumpte...",
-   "codiINE10":"827",
-   "codiDIR3Organisme":"789",
-   "procediment":"procediment...",
-   "dataInici":1604401681254,
-   "url":"www.test.com",
+   "assumpte":"Assumpte",
+   "codiINE10":"9821920002",
+   "codiDIR3Organisme":"L01080193",
+   "procediment":"Procediment",
+   "dataInici":2020-04-23T18:25:43.511Z,
+   "url":"http://www.test.com",
    "tipusPersona":"INTERESSAT",
    "familia":"F1",
-   "dataPrevistaResolucio":1604401681254,
-   "descripcioFase":"Descripcio...",
+   "dataPrevistaResolucio":2020-05-23T18:25:43.511Z,
+   "descripcioFase":"Descripcio",
    "estat":"FINALITZAT",
-   "obervacions":"Observacions...",
+   "obervacions":"Observacions",
    "numeroRegistre":"NUM_43",
-   "dataRegistre":1604401681254,
+   "dataRegistre":2020-04-24T18:25:43.511Z,
    "actuacioCiutada":"NO_APLICA",
    "fase":"fase"
 }
@@ -288,7 +288,7 @@ Retorna el detall d'un o més expedients
    
 ##### Exemple peticio  
 
-` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&codiINE10=2345654&dataInici=2020-10-21&dataFi=2021-10-21&estat=OBERT}`  
+` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT}`  
 
 ##### Exemple resposta 
 
@@ -299,29 +299,29 @@ Retorna el detall d'un o més expedients
    "expedients":[
       {
          "identificador":"id_65",
-         "assumpte":"assumpte...",
-         "codiDIR3Organisme":"973",
-         "procediment":"procediment...",
-         "dataInici":1604401681254,
-         "url":"www.test.com",
+         "assumpte":"Assumpte",
+         "codiDIR3Organisme":"L01080193",
+         "procediment":"Procediment",
+         "dataInici":2020-04-24T01:25:43.987Z,
+         "url":"http://www.test.com",
          "tipusPersona":"REPRESENTANT",
          "familia":"F1",
-         "dataPrevistaResolucio":1604401681254,
-         "descripcioFase":"Descripcio...",
+         "dataPrevistaResolucio":2020-04-26T08:25:43.123Z,
+         "descripcioFase":"Descripcio",
          "estat":"OBERT",
-         "obervacions":"Observacions...",
+         "obervacions":"Observacions",
          "numeroRegistre":"NUM_43",
-         "dataRegistre":1604401681254,
+         "dataRegistre":2020-04-23T18:25:43.511Z,
          "actuacioCiutada":"NO_APLICA",
          "fase":"fase"
       },
       {
          "identificador":"id_82",
-         "assumpte":"assumpte...",
+         "assumpte":"Assumpte",
          "codiDIR3Organisme":"338",
-         "procediment":"procediment...",
-         "dataInici":1604401681254,
-         "url":"www.test.com",
+         "procediment":"Procediment",
+         "dataInici":2020-01-26T14:25:43.001Z,
+         "url":"http://www.test.com",
          "tipusPersona":"REPRESENTANT",
          "estat":"OBERT"
       },
@@ -350,7 +350,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
   
 #### Exemple peticio   
 
-` GET /consultaAgrupada?documentIdentificador=98906049A&codiINE10=34668342`  
+` GET /consultaAgrupada?documentIdentificador=98906049A&codiINE10=9821920002`  
   
 #### Exemple resposta 
 
@@ -361,7 +361,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
    "documentIdentificador":"98906049A",   
    "agrupacions":[
       {
-         "codiINE10":"34668342", 
+         "codiINE10":"9821920002", 
          "agrupacioActuacions":{
             "entrades":{
                "numTotal":9,
