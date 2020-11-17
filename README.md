@@ -181,13 +181,14 @@ Retorna el detall d'una o més actuacions
   
 ##### Peticio  
 
-` GET /consultaActuacionsDetallada?{documentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
+` GET /consultaActuacionsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
   
 ##### Descripcio camps   
 
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | documentIdentificador | SI |   
+| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
 | dataInici | NO |   
@@ -197,7 +198,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Exemple peticio  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
     
 ##### Exemple resposta 
 
@@ -229,7 +230,7 @@ Retorna el detall d'un expedient únic a partir del seu identificador
 
 ##### Peticio  
 
-` GET /consultaExpedientDetallada?{identificador, codiINE10, codiDIR3Organisme}`  
+` GET /consultaExpedientDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
   
 ##### Descripcio camps   
 
@@ -273,13 +274,14 @@ Retorna el detall d'un o més expedients
   
 ##### Perticio  
 
-` GET /consultaExpedientsDetallada?{documentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat}`  
+` GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat}`  
   
 ##### Descripcio camps   
 
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
 | documentIdentificador | SI |   
+| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
 | dataInici | NO |   
@@ -288,7 +290,7 @@ Retorna el detall d'un o més expedients
    
 ##### Exemple peticio  
 
-` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT}`  
+` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT}`  
 
 ##### Exemple resposta 
 
@@ -340,19 +342,20 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
   
 #### Peticio
 
-` GET /consultaAgrupada?{documentIdentificador,codiINE10,codiDIR3}`  
+` GET /consultaAgrupada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3}`  
   
 #### Descripcio camps   
 
 |   Parametre  |  Obligatori  |   
 | --- | --- |   
-| documentIdentificador | SI |   
+| documentIdentificador | SI | 
+| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
   
 #### Exemple peticio   
 
-` GET /consultaAgrupada?documentIdentificador=98906049A&codiINE10=9821920002`  
+` GET /consultaAgrupada?documentIdentificador=98906049A&tipusDocumentIdentificador&codiINE10=9821920002`  
   
 #### Exemple resposta 
 
@@ -360,7 +363,6 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
  {
    "codiResultat":"codiOK",
    "descripcioResultat":"Descripcio resultat",
-   "documentIdentificador":"98906049A",   
    "agrupacions":[
       {
          "codiINE10":"9821920002", 
