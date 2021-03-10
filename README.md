@@ -63,7 +63,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
    "procediment":"Procediment",
    "observacions":"Observacions",
    "referenciaExterna":"Referencia",   
-   "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA"
+   "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
+   "fue":"false"
 }
 ```  
 
@@ -71,10 +72,10 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 |       Parametre      | Descripcio | Obligatori |  
 | ----------------------| --- | --- |  
-| codiINE10              | Codi INE10 | NO (si s'ha inidicat el codiDIR3Organisme) |  
-| codiDIR3Organisme      | Codi DIR3 | NO (si s'ha inidicat el codiINE10) |
+| codiINE10              | Codi INE10 | NO (si s'ha indicat el codiDIR3Organisme) |  
+| codiDIR3Organisme      | Codi DIR3 | NO (si s'ha indicat el codiINE10) |
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
-| tipus                  | Tipus d'actuacio | SI (ENTRADA, SORTIDA)|  
+| tipus                  | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
 | identificador          | Identificador únic | SI |  
 | dataActuacio           | Data de l'actuació o la data registre segons apliqui. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |  
 | assumpte               | Assumpte | SI |  
@@ -85,6 +86,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | observacions           | Observacions| NO |  
 | referenciaExterna      | Referencia externa | NO |
 | canalPreferentNotificacio         | Canal preferent | NO (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
+| fue					 | Actuació FUE? | NO (defecte false, true)
     
 ### Expedient  
 
@@ -108,7 +110,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
    "numeroRegistre":"NUM_43",
    "dataRegistre":"2020-01-23T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
-   "fase":"fase"
+   "fase":"fase",
+   "fue":"false"
 }
 ```  
  
@@ -132,7 +135,8 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 | numeroRegistre | Número de registre | NO |   
 | dataRegistre | Data registre. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
 | actuacioCiutada | NO (SI, NO, NO_APLICA) |   
-| fase | Fase | NO |   
+| fase | Fase | NO | 
+| fue | Expedient FUE? | NO (defecte false, true)
   
   
 ## Consultes   
@@ -194,11 +198,12 @@ Retorna el detall d'una o més actuacions
 | dataInici | NO |   
 | dataFi | NO |   
 | tipus | NO |   
+| fue | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
   
   
 ##### Exemple peticio  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA` 
+` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA&fue=true` 
     
 ##### Exemple resposta 
 
@@ -220,7 +225,8 @@ Retorna el detall d'una o més actuacions
    "numeroRegistre":"NUM_43",
    "dataRegistre":"2020-05-22T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
-   "fase":"fase"
+   "fase":"fase",
+   "fue":"true"
 }
 ``` 
    
@@ -264,7 +270,8 @@ Retorna el detall d'un expedient únic a partir del seu identificador
    "numeroRegistre":"NUM_43",
    "dataRegistre":"2020-04-24T18:25:43.511Z",
    "actuacioCiutada":"NO_APLICA",
-   "fase":"fase"
+   "fase":"fase",
+   "fue":"false"
 }
 ```  
   
@@ -274,7 +281,7 @@ Retorna el detall d'un o més expedients
   
 ##### Perticio  
 
-` GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat}`  
+` GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
   
 ##### Descripcio camps   
 
@@ -287,10 +294,11 @@ Retorna el detall d'un o més expedients
 | dataInici | NO |   
 | dataFi | NO |   
 | estat | NO (OBERT,TANCAT) |   
+| fue | NO (no informat: tots, true: expedients FUE, false: expedients no FUE)
    
 ##### Exemple peticio  
 
-` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT}`  
+` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
 
 ##### Exemple resposta 
 
@@ -316,7 +324,8 @@ Retorna el detall d'un o més expedients
          "numeroRegistre":"NUM_43",
          "dataRegistre":"2020-04-23T18:25:43.511Z",
          "actuacioCiutada":"NO_APLICA",
-         "fase":"fase"
+         "fase":"fase",
+         "fue":"false"
       },
       {
          "identificador":"id_82",
@@ -327,7 +336,8 @@ Retorna el detall d'un o més expedients
          "dataInici":"2020-01-26T14:25:43.001Z",
          "url":"http://www.test.com",
          "tipusPersona":"REPRESENTANT",
-         "estat":"OBERT"
+         "estat":"OBERT",
+         "fue":"false"
       },
       {
          "..."
@@ -342,7 +352,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
   
 #### Peticio
 
-` GET /consultaAgrupada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3}`  
+` GET /consultaAgrupada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,fue}`  
   
 #### Descripcio camps   
 
@@ -352,6 +362,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
 | tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
+| fue | NO (no informat: tots, true: actuacions/expedients FUE, false: actuacions/expedients no FUE)
   
 #### Exemple peticio   
 
