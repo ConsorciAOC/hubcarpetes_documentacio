@@ -1,9 +1,21 @@
 # AOC Hub de carpetes ciutadanes
 Projecte de documentació per als integradors del Hub de Carpetes Ciutadanes (HCC) del Consorci AOC. El HCC consultarà a cada ens integrat informació sobre actuacions i expedients que aquests hauràn d'exposar a través d'una interfície REST que compleixi el model i consultes descrites a continuació.
+
+Per integrar-se al servei caldrà fer arribar a l'AOC les **url** de les consultes:
+- INFO RELATIVA DE QUI SON? Nom administracio, codi INE... ?
+- [consulta detallada d'una actuació](#actuacio-1).
+- [consulta detallada d'una o més actuacions](#actuacions).
+- [consulta detallada d'un expedient](#expedient-1).
+- [consulta detallada d'un o més expedients](#expedients).
+- [consulta agrupada](#consulta-agrupada).
+
 Es recomana securitzar els endpoints exposats:
 - comunicacions via HTTPS.
 - validar el certificat client que l'AOC proporcionarà al establir la connexió.
 - filtrant la/les IP que l'AOC proporcioni als integradors.
+
+Un cop l'AOC tingui la informació necessària per consultar, validarà que la integració funcioni correctament.
+
 
 
 _Aquest document està en fase d'esborrany i pot patir alguns canvis._
