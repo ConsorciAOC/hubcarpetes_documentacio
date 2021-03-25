@@ -1,5 +1,10 @@
 # AOC Hub de carpetes ciutadanes
-Projecte de documentació per als integradors del hub de carpetes ciutadanes del Consorci AOC.
+Projecte de documentació per als integradors del Hub de Carpetes Ciutadanes (HCC) del Consorci AOC. El HCC consultarà a cada ens integrat informació sobre actuacions i expedients que aquests hauràn d'exposar a través d'una interfície REST que compleixi el model i consultes descrites a continuació.
+Es recomana securitzar els endpoints exposats:
+- comunicacions via HTTPS.
+- validar el certificat client que l'AOC proporcionarà al establir la connexió.
+- filtrant la/les IP que l'AOC proporcioni als integradors.
+
 
 _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
@@ -40,9 +45,9 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
-
 ## Model
+
+A continuació de descriuen els atributs i estructura dels objectes d'intercanvi d'informació entre el HCC i els ens integrats.
 
 ### Actuacio
 
@@ -141,7 +146,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
   
 ## Consultes   
 
-El **hubcarpetes** farà les següents crides als sistemes integrats per consultar les dades necessàries.  
+El **HCC** farà les següents crides als sistemes integrats per consultar les dades.  
   
 ### Consulta detallada  
     
