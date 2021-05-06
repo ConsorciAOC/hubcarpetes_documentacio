@@ -9,9 +9,9 @@ Per integrar-se al servei caldrà fer arribar a l'AOC les **url** de les consult
 - [consulta agrupada](#consulta-agrupada).
 
 Es recomana securitzar els endpoints exposats:
-- comunicacions via HTTPS.
-- validar el certificat client que l'AOC proporcionarà al establir la connexió.
-- filtrant la/les IP que l'AOC proporcioni als integradors.
+- Comunicacions via HTTPS.
+- Validar el [certificat client](/SEGELL_AOC.cer) que l'AOC presentarà al establir la connexió.
+- Filtrant per la següent IP per la qual arribarà el CAOC als serveis web oferts: `157.97.64.126`
 
 Un cop l'AOC tingui la informació necessària per consultar les dades validarà que la integració funcioni correctament.
 
