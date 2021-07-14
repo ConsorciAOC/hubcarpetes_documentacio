@@ -167,7 +167,7 @@ Retorna el detall d'una actuació única a partir del seu identificador
 
 ##### Petició
 
-` GET /consultaActuacioDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
+`GET /consultaActuacioDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
   
 ##### Descripció camps 
 
@@ -179,7 +179,7 @@ Retorna el detall d'una actuació única a partir del seu identificador
 
 ##### Exemple petició
 
-` GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
+`GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
     
 ##### Exemple resposta 
 
@@ -201,7 +201,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Petició 
 
-` GET /consultaActuacionsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
+`GET /consultaActuacionsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
   
 ##### Descripció camps   
 
@@ -219,7 +219,7 @@ Retorna el detall d'una o més actuacions
   
 ##### Exemple petició  
 
-` GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA&fue=true` 
+`GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA&fue=true` 
     
 ##### Exemple resposta 
 
@@ -252,7 +252,7 @@ Retorna el detall d'un expedient únic a partir del seu identificador
 
 ##### Petició  
 
-` GET /consultaExpedientDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
+`GET /consultaExpedientDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
   
 ##### Descripció camps   
 
@@ -264,7 +264,7 @@ Retorna el detall d'un expedient únic a partir del seu identificador
   
 ##### Exemple petició
 
-` GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
+`GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
   
 ##### Exemple resposta 
 
@@ -297,7 +297,7 @@ Retorna el detall d'un o més expedients
   
 ##### Perticio  
 
-` GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
+`GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
   
 ##### Descripció camps   
 
@@ -314,7 +314,7 @@ Retorna el detall d'un o més expedients
    
 ##### Exemple petició  
 
-` GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
+`GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
 
 ##### Exemple resposta 
 
@@ -368,7 +368,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
   
 #### Petició
 
-` GET /consultaAgrupada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,fue}`  
+`GET /consultaAgrupada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,fue}`  
   
 #### Descripció camps   
 
@@ -382,7 +382,7 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
   
 #### Exemple petició   
 
-` GET /consultaAgrupada?documentIdentificador=98906049A&tipusDocumentIdentificador&codiINE10=9821920002`  
+`GET /consultaAgrupada?documentIdentificador=98906049A&tipusDocumentIdentificador&codiINE10=9821920002`  
   
 #### Exemple resposta 
 
