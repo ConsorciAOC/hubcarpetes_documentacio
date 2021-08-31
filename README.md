@@ -3,10 +3,10 @@ Projecte de documentació per als integradors del Hub de Carpetes Ciutadanes (HC
 
 Per integrar-se al servei caldrà fer arribar a l'AOC les **url** de les consultes:
 1. [Consulta agrupada](#1-consulta-agrupada)
-2. [Consulta detallada d'una actuació](#2-consulta-detallada-duna-actuacio)
-3. [Consulta detallada d'un expedient](#expedient-1)
-4. [Consulta detallada d'una o més actuacions](#actuacions)
-5. [Consulta detallada d'un o més expedients](#expedients)
+2. [Consulta detallada d'una actuació](#2-consulta-detallada-duna-actuació)
+3. [Consulta detallada d'un expedient](#3-consulta-detallada-dun-expedient)
+4. [Consulta detallada d'una o més actuacions](#4-consulta-detallada-duna-o-més-actuacions)
+5. [Consulta detallada d'un o més expedients](#5-consulta-detallada-dun-o-més-expedients)
 
 Es recomana securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
@@ -376,7 +376,7 @@ Retorna el detall d'una o més actuacions
 
 Retorna el detall d'un o més expedients  
   
-##### Perticio  
+##### Petició
 
 `GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
   
