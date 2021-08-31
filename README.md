@@ -275,8 +275,7 @@ Retorna el detall d'una actuació única a partir del seu identificador
    "url":"http://www.abc.com/28"
 }
  ```  
-
- #### 3. Consulta detallada d'un expedient
+#### 3. Consulta detallada d'un expedient
 
 Retorna el detall d'un expedient únic a partir del seu identificador
 
