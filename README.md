@@ -43,7 +43,7 @@ _Aquest document està en fase d'esborrany i pot patir alguns canvis._
       - [Descripció camps](#descripció-camps-4)
       - [Exemple petició](#exemple-petició-2)
       - [Exemple resposta](#exemple-resposta-2)
-   + [Actuacions](#4-consulta-detallada-duna-o-més-actuacions)
+    + [Actuacions](#4-consulta-detallada-duna-o-més-actuacions)
       - [Petició](#petició-3)
       - [Descripció camps](#descripció-camps-5)
       - [Exemple petició](#exemple-petició-3)
