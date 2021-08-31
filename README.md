@@ -2,11 +2,11 @@
 Projecte de documentació per als integradors del Hub de Carpetes Ciutadanes (HCC) del Consorci AOC. El HCC consultarà a cada ens integrat informació sobre actuacions i expedients que aquests hauràn d'exposar a través d'una interfície REST que compleixi el model i consultes descrites a continuació.
 
 Per integrar-se al servei caldrà fer arribar a l'AOC les **url** de les consultes:
-1. [consulta agrupada](#consulta-agrupada).
-2. [consulta detallada d'una actuació](#actuacio-1).
-3. [consulta detallada d'un expedient](#expedient-1).
-4. [consulta detallada d'una o més actuacions](#actuacions).
-5. [consulta detallada d'un o més expedients](#expedients).
+1. [Consulta agrupada](#1-consulta-agrupada)
+2. [Consulta detallada d'una actuació](#2-consulta-detallada-duna-actuacio)
+3. [Consulta detallada d'un expedient](#expedient-1)
+4. [Consulta detallada d'una o més actuacions](#actuacions)
+5. [Consulta detallada d'un o més expedients](#expedients)
 
 Es recomana securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
@@ -158,211 +158,8 @@ A continuació de descriuen els atributs i estructura dels objectes d'intercanvi
 ## Consultes   
 
 El **HCC** farà les següents crides als sistemes integrats per consultar les dades.  
-  
-### Consulta detallada  
-    
-#### Actuació  
 
-Retorna el detall d'una actuació única a partir del seu identificador
-
-##### Petició
-
-`GET /consultaActuacioDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
-  
-##### Descripció camps 
-
-|  Paràmetre | Obligatori |  
-|---|---|  
-|identificador|SI|  
-|codiINE10|NO|
-|codiDIR3Organisme|NO|
-
-##### Exemple petició
-
-`GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
-    
-##### Exemple resposta 
-
-```json   
-{
-   "codiINE10":"9821920002",
-   "tipusPersona":"INTERESSAT",
-   "tipus":"ENTRADA",
-   "identificador":"3fh54h6hfh4h43jd24354",
-   "dataRegistre":"2020-04-24T18:25:43.511Z",
-   "assumpte":"Assumpte",
-   "url":"http://www.abc.com/28"
-}
- ```  
-    
-#### Actuacions
-
-Retorna el detall d'una o més actuacions  
-  
-##### Petició 
-
-`GET /consultaActuacionsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
-  
-##### Descripció camps   
-
-|   Paràmetre  |  Obligatori  |   
-| --- | --- |   
-| documentIdentificador | SI |   
-| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
-| codiINE10 | NO |   
-| codiDIR3Organisme | NO |   
-| dataInici | NO |   
-| dataFi | NO |   
-| tipus | NO |   
-| fue | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
-  
-  
-##### Exemple petició  
-
-`GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA&fue=true` 
-    
-##### Exemple resposta 
-
-```json  
-{
-   "identificador":"id_43",
-   "assumpte":"Assumpte",
-   "codiINE10":"9821920002",
-   "codiDIR3Organisme":"L01080193",
-   "procediment":"Procediment",
-   "dataInici":"2020-05-23T18:25:43.511Z",
-   "url":"http://www.test.com",
-   "tipusPersona":"INTERESSAT",
-   "familia":"F1",
-   "dataPrevistaResolucio":"2022-04-23T18:25:43.511Z",
-   "descripcioFase":"Descripció",
-   "estat":"TANCAT",
-   "observacions":"Observacions",
-   "numeroRegistre":"NUM_43",
-   "dataRegistre":"2020-05-22T18:25:43.511Z",
-   "actuacioCiutada":"NO_APLICA",
-   "fase":"fase",
-   "fue":"true"
-}
-``` 
-   
-#### Expedient  
-
-Retorna el detall d'un expedient únic a partir del seu identificador
-
-##### Petició  
-
-`GET /consultaExpedientDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
-  
-##### Descripció camps   
-
-|   Paràmetre  |  Obligatori  |   
-| --- | --- |   
-| identificador | SI |   
-| codiINE10 | NO |   
-| codiDIR3Organisme | NO |   
-  
-##### Exemple petició
-
-`GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
-  
-##### Exemple resposta 
-
-```json  
-{
-   "identificador":"id_43",
-   "assumpte":"Assumpte",
-   "codiINE10":"9821920002",
-   "codiDIR3Organisme":"L01080193",
-   "procediment":"Procediment",
-   "dataInici":"2020-04-23T18:25:43.511Z",
-   "url":"http://www.test.com",
-   "tipusPersona":"INTERESSAT",
-   "familia":"F1",
-   "dataPrevistaResolucio":"2020-05-23T18:25:43.511Z",
-   "descripcioFase":"Descripció",
-   "estat":"TANCAT",
-   "observacions":"Observacions",
-   "numeroRegistre":"NUM_43",
-   "dataRegistre":"2020-04-24T18:25:43.511Z",
-   "actuacioCiutada":"NO_APLICA",
-   "fase":"fase",
-   "fue":"false"
-}
-```  
-  
-#### Expedients  
-
-Retorna el detall d'un o més expedients  
-  
-##### Perticio  
-
-`GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
-  
-##### Descripció camps   
-
-|   Paràmetre  |  Obligatori  |   
-| --- | --- |   
-| documentIdentificador | SI |   
-| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
-| codiINE10 | NO |   
-| codiDIR3Organisme | NO |   
-| dataInici | NO |   
-| dataFi | NO |   
-| estat | NO (OBERT,TANCAT) |   
-| fue | NO (no informat: tots, true: expedients FUE, false: expedients no FUE)
-   
-##### Exemple petició  
-
-`GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
-
-##### Exemple resposta 
-
-```json  
-{
-   "codiResultat":"codiOK",
-   "descripcioResultat":"Descripció",
-   "expedients":[
-      {
-         "identificador":"id_65",
-         "assumpte":"Assumpte",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "procediment":"Procediment",
-         "dataInici":"2020-04-24T01:25:43.987Z",
-         "url":"http://www.test.com",
-         "tipusPersona":"REPRESENTANT",
-         "familia":"F1",
-         "dataPrevistaResolucio":"2020-04-26T08:25:43.123Z",
-         "descripcioFase":"Descripció",
-         "estat":"OBERT",
-         "observacions":"Observacions",
-         "numeroRegistre":"NUM_43",
-         "dataRegistre":"2020-04-23T18:25:43.511Z",
-         "actuacioCiutada":"NO_APLICA",
-         "fase":"fase",
-         "fue":"false"
-      },
-      {
-         "identificador":"id_82",
-         "assumpte":"Assumpte",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "procediment":"Procediment",
-         "dataInici":"2020-01-26T14:25:43.001Z",
-         "url":"http://www.test.com",
-         "tipusPersona":"REPRESENTANT",
-         "estat":"OBERT",
-         "fue":"false"
-      },
-      {
-         "..."
-      }
-   ]
-}  
-```  
-
-### Consulta agrupada  
+### 1. Consulta agrupada  
 
 Retorna un resum quantitatiu de les actuacions i/o expedients donat un document identificador. En el cas de les actuacions agrupades segons el tipus, entrada o sortida. I en el cas dels expedients, agrupats per estat.  
   
@@ -441,5 +238,207 @@ Retorna un resum quantitatiu de les actuacions i/o expedients donat un document 
       }
    ]
 }
+ ``` 
+  
+### 2. Consulta detallada d'una actuació
+    
+#### Actuació  
+
+Retorna el detall d'una actuació única a partir del seu identificador
+
+##### Petició
+
+`GET /consultaActuacioDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
+  
+##### Descripció camps 
+
+|  Paràmetre | Obligatori |  
+|---|---|  
+|identificador|SI|  
+|codiINE10|NO|
+|codiDIR3Organisme|NO|
+
+##### Exemple petició
+
+`GET /consultaActuacioDetallada?identificador=3fh54h6hfh4h43jd24354`  
+    
+##### Exemple resposta 
+
+```json   
+{
+   "codiINE10":"9821920002",
+   "tipusPersona":"INTERESSAT",
+   "tipus":"ENTRADA",
+   "identificador":"3fh54h6hfh4h43jd24354",
+   "dataRegistre":"2020-04-24T18:25:43.511Z",
+   "assumpte":"Assumpte",
+   "url":"http://www.abc.com/28"
+}
  ```  
- 
+
+ #### 3. Consulta detallada d'un expedient
+
+Retorna el detall d'un expedient únic a partir del seu identificador
+
+##### Petició  
+
+`GET /consultaExpedientDetallada?{identificador,codiINE10,codiDIR3Organisme}`  
+  
+##### Descripció camps   
+
+|   Paràmetre  |  Obligatori  |   
+| --- | --- |   
+| identificador | SI |   
+| codiINE10 | NO |   
+| codiDIR3Organisme | NO |   
+  
+##### Exemple petició
+
+`GET /consultaExpedientDetallada?identificador=54g657h243k234h`  
+  
+##### Exemple resposta 
+
+```json  
+{
+   "identificador":"id_43",
+   "assumpte":"Assumpte",
+   "codiINE10":"9821920002",
+   "codiDIR3Organisme":"L01080193",
+   "procediment":"Procediment",
+   "dataInici":"2020-04-23T18:25:43.511Z",
+   "url":"http://www.test.com",
+   "tipusPersona":"INTERESSAT",
+   "familia":"F1",
+   "dataPrevistaResolucio":"2020-05-23T18:25:43.511Z",
+   "descripcioFase":"Descripció",
+   "estat":"TANCAT",
+   "observacions":"Observacions",
+   "numeroRegistre":"NUM_43",
+   "dataRegistre":"2020-04-24T18:25:43.511Z",
+   "actuacioCiutada":"NO_APLICA",
+   "fase":"fase",
+   "fue":"false"
+}
+```  
+    
+#### 4. Consulta detallada d'una o més actuacions
+
+Retorna el detall d'una o més actuacions  
+  
+##### Petició 
+
+`GET /consultaActuacionsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
+  
+##### Descripció camps   
+
+|   Paràmetre  |  Obligatori  |   
+| --- | --- |   
+| documentIdentificador | SI |   
+| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
+| codiINE10 | NO |   
+| codiDIR3Organisme | NO |   
+| dataInici | NO |   
+| dataFi | NO |   
+| tipus | NO |   
+| fue | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
+  
+  
+##### Exemple petició  
+
+`GET /consultaActuacionsDetallada?documentIdentificador=12345678A&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipus=ENTRADA&fue=true` 
+    
+##### Exemple resposta 
+
+```json  
+{
+   "identificador":"id_43",
+   "assumpte":"Assumpte",
+   "codiINE10":"9821920002",
+   "codiDIR3Organisme":"L01080193",
+   "procediment":"Procediment",
+   "dataInici":"2020-05-23T18:25:43.511Z",
+   "url":"http://www.test.com",
+   "tipusPersona":"INTERESSAT",
+   "familia":"F1",
+   "dataPrevistaResolucio":"2022-04-23T18:25:43.511Z",
+   "descripcioFase":"Descripció",
+   "estat":"TANCAT",
+   "observacions":"Observacions",
+   "numeroRegistre":"NUM_43",
+   "dataRegistre":"2020-05-22T18:25:43.511Z",
+   "actuacioCiutada":"NO_APLICA",
+   "fase":"fase",
+   "fue":"true"
+}
+``` 
+  
+#### 5. Consulta detallada d'un o més expedients
+
+Retorna el detall d'un o més expedients  
+  
+##### Perticio  
+
+`GET /consultaExpedientsDetallada?{documentIdentificador,tipusDocumentIdentificador,codiINE10,codiDIR3Organisme,dataInici,dataFi,estat,fue}`  
+  
+##### Descripció camps   
+
+|   Paràmetre  |  Obligatori  |   
+| --- | --- |   
+| documentIdentificador | SI |   
+| tipusDocumentIdentificador | SI (NIF,NIE,PASSAPORT) |   
+| codiINE10 | NO |   
+| codiDIR3Organisme | NO |   
+| dataInici | NO |   
+| dataFi | NO |   
+| estat | NO (OBERT,TANCAT) |   
+| fue | NO (no informat: tots, true: expedients FUE, false: expedients no FUE)
+   
+##### Exemple petició  
+
+`GET /consultaExpedientsDetallada?documentIdentificador=34867564R&tipusDocumentIdentificador=NIF&codiINE10=9821920002&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
+
+##### Exemple resposta 
+
+```json  
+{
+   "codiResultat":"codiOK",
+   "descripcioResultat":"Descripció",
+   "expedients":[
+      {
+         "identificador":"id_65",
+         "assumpte":"Assumpte",
+         "codiINE10":"9821920002",
+         "codiDIR3Organisme":"L01080193",
+         "procediment":"Procediment",
+         "dataInici":"2020-04-24T01:25:43.987Z",
+         "url":"http://www.test.com",
+         "tipusPersona":"REPRESENTANT",
+         "familia":"F1",
+         "dataPrevistaResolucio":"2020-04-26T08:25:43.123Z",
+         "descripcioFase":"Descripció",
+         "estat":"OBERT",
+         "observacions":"Observacions",
+         "numeroRegistre":"NUM_43",
+         "dataRegistre":"2020-04-23T18:25:43.511Z",
+         "actuacioCiutada":"NO_APLICA",
+         "fase":"fase",
+         "fue":"false"
+      },
+      {
+         "identificador":"id_82",
+         "assumpte":"Assumpte",
+         "codiINE10":"9821920002",
+         "codiDIR3Organisme":"L01080193",
+         "procediment":"Procediment",
+         "dataInici":"2020-01-26T14:25:43.001Z",
+         "url":"http://www.test.com",
+         "tipusPersona":"REPRESENTANT",
+         "estat":"OBERT",
+         "fue":"false"
+      },
+      {
+         "..."
+      }
+   ]
+}  
+```  
