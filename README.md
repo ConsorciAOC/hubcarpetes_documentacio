@@ -149,7 +149,7 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 També trobareu la totalitat de paràmetres previstos actualment en el [model de dades de la resposta](/model_dades_mygov.xslx).
 Els paràmetres segueixen una estructura determinada pel nom del mateix en minúscules i, opcionalment, l'àmbit: "parametre" i "parametreAmbit".
 
-A continuació, trobareu la totalitat de paràmetres previstos actualment en el model de la resposta.
+A continuació, trobareu la totalitat de paràmetres previstos actualment en el model de dades:
 
 |   Paràmetre  |  Descripció  |  Obligatori  |   
 | --- | --- | --- |   
@@ -222,8 +222,7 @@ Per la possibilitat de no trobar cap actuació per fer el retorn, en base a un d
 ```json  
 {
 "codiResultat":"404",
-"descripcioResultat":"No s'ha trobat cap actuació",
-"..."
+"descripcioResultat":"No s'ha trobat cap actuació"
 }
 ``` 
 
@@ -326,8 +325,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
 ```json  
 {
 "codiResultat":"404",
-"descripcioResultat":"No s'ha trobat cap expedient",
-"..."
+"descripcioResultat":"No s'ha trobat cap expedient"
 }
 ``` 
 
