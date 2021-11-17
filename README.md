@@ -134,7 +134,7 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
    "assumpteExpedient":"Llicència d'obres - Carrer principal, 34",   
    "urlExpedient":"www.seu.com/e/2021_225",
    "familia":"Obres",
-   "dataPrevistaResolucio":"2021-07-26T08:25:43.123Z",
+   "dataPrevistaResolucio":"2021-07-26",
    "dataFinalitzacioExpedient":"2021-07-26T18:25:43.511Z",
    "codiFase":"02",
    "descripcioFaseExpedient":"En tramitació",
@@ -170,7 +170,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
-| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
+| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DD | NO |   
 | dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
@@ -364,7 +364,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "assumpteExpedient":"Llicència d'obres",
          "urlExpedient":"http://www.abc.cat/e/2021_225",
          "familia":"Obres",
-         "dataPrevistaResolucio":"2020-04-26T08:25:43.123Z",
+         "dataPrevistaResolucio":"2020-04-26",
          "codiFase":"02",
          "descripcioFaseExpedient":"En tramitació",
          "estatExpedient":"OBERT",
