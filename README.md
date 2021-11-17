@@ -99,8 +99,8 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | documentIdentificatiu          | Document identificatiu únic de la persona | SI |  
 | tipusDocumentIdentificatiu          | Tipus de document identificatiu únic de la persona | SI (NIF,NIE,PASSAPORT)|  
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
-| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI |  
-| codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO |
+| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
+| codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
 | dataActuacio           | Data de l'actuació. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |  
 | numeroRegistre           | Número de registre en format string | NO |  
@@ -119,7 +119,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 
 #### Exemple JSON
 
-El model s'ha dividit en blocs d'informació integrats en la resposta: Identificador de l'objecte, de la persona, de l'ens, de l'actuació i de l'expedient. El paràmetre "dataFinalitzacioExpedient" està informat però a mode d'exemple il·lustratiu però, en aquest cas concret, és incongruent donat que l'expedient es troba "En tramitació" i no hauria de tenir data de finalització.
+El model s'ha dividit en blocs d'informació integrats en la resposta: Identificador de l'objecte, de la persona, de l'ens, de l'actuació i de l'expedient. El paràmetre "dataFinalitzacioExpedient" està informat en ser un expedient tancat.
 
 ```json  
 {
@@ -130,15 +130,15 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
    "codiINE10":"9821920002",
    "codiDIR3Organisme":"L01080193",
    "procediment":"OBRES1 - Llicència d'obres",
-   "dataIniciExpedient":"2020-04-24T01:25:43.987Z",
+   "dataIniciExpedient":"2021-04-24T01:25:43.987Z",
    "assumpteExpedient":"Llicència d'obres - Carrer principal, 34",   
    "urlExpedient":"www.seu.com/e/2021_225",
    "familia":"Obres",
-   "dataPrevistaResolucio":"2020-04-26T08:25:43.123Z",
-   "dataFinalitzacioExpedient":"2020-10-24T18:25:43.511Z",
+   "dataPrevistaResolucio":"2021-07-26T08:25:43.123Z",
+   "dataFinalitzacioExpedient":"2021-07-26T18:25:43.511Z",
    "codiFase":"02",
    "descripcioFaseExpedient":"En tramitació",
-   "estatExpedient":"Obert",
+   "estatExpedient":"Tancat",
    "observacionsExpedient":"Llicència - Reforma planta baixa",
    "idActuacio":"2021-E-225",
    "dataActuacio":"2021-04-23T18:25:43.511Z",
@@ -221,10 +221,19 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 
 |       Paràmetre      | Descripció | Obligatori |  
 | --- | --- | --- |  
-| codiResultat | Retorna el codi d'error | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
-| descripcioResultat | Retorna un string de detall de l'error | SI |
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
+| descripcioResultat | Retorna un string de detall de l'operació | SI |
 | actuacions | Array de resposta de les actuacions | SI |
 
+Per la possibilitat de no trobar cap actuació per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
+
+```json  
+{
+"codiResultat":"404",
+"descripcioResultat":"No s'ha trobat cap actuació",
+...
+}
+``` 
 
 ##### Exemple resposta
 
@@ -322,17 +331,26 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 
 |   Paràmetre  |  Descripció  |  Obligatori  |   
 | --- | --- | --- |   
-| codiResultat | Retorna el codi d'error | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
-| descripcioResultat | Retorna un string de detall de l'error | SI |
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
+| descripcioResultat | Retorna un string de detall de l'operació | SI |
 | expedients | Array de resposta dels expedients | SI |
 
+Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
+
+```json  
+{
+"codiResultat":"404",
+"descripcioResultat":"No s'ha trobat cap expedient",
+...
+}
+``` 
 
 ##### Exemple resposta
 
 ```json  
 {
-   "codiResultat":"codiOK",
-   "descripcioResultat":"Descripció",
+   "codiResultat":"200",
+   "descripcioResultat":"OK",
    "expedients":[
       {
          "idExpedient":"2021_225",
