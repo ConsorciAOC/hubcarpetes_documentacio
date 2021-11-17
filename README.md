@@ -231,7 +231,7 @@ Per la possibilitat de no trobar cap actuació per fer el retorn, en base a un d
 {
 "codiResultat":"404",
 "descripcioResultat":"No s'ha trobat cap actuació",
-...
+"..."
 }
 ``` 
 
@@ -341,7 +341,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
 {
 "codiResultat":"404",
 "descripcioResultat":"No s'ha trobat cap expedient",
-...
+"..."
 }
 ``` 
 
