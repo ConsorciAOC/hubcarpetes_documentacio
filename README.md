@@ -94,7 +94,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
 | idActuacio          | Identificador de l'actuació | SI |  
-| tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
+| tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
 | codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
