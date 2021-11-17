@@ -67,8 +67,6 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 ```json  
 {
   "idActuacio":"id_43",
-  "documentIdentificatiu":"12345678A",
-  "tipusDocumentIdentificatiu":"NIF",
   "tipusPersona":"REPRESENTANT",
   "codiINE10":"9821920002",
   "codiDIR3Organisme":"L01080193",
@@ -96,8 +94,6 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
 | idActuacio          | Identificador de l'actuació | SI |  
-| documentIdentificatiu          | Document identificatiu únic de la persona | SI |  
-| tipusDocumentIdentificatiu          | Tipus de document identificatiu únic de la persona | SI (NIF,NIE,PASSAPORT)|  
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT |  
 | codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
@@ -124,8 +120,6 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 ```json  
 {
    "idExpedient":"2021_225",
-   "documentIdentificatiu":"12345678A",
-   "tipusDocumentIdentificatiu":"NIF",
    "tipusPersona":"INTERESSAT",
    "codiINE10":"9821920002",
    "codiDIR3Organisme":"L01080193",
@@ -160,8 +154,6 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 |   Paràmetre  |  Descripció  |  Obligatori  |   
 | --- | --- | --- |   
 | idExpedient | Identificador de l'expedient | SI |  
-| documentIdentificatiu | Document identificatiu únic de la persona | SI |   
-| tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |  
 | tipusPersona  | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
 | codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI|
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO|    
@@ -203,7 +195,7 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 | --- | --- |   
 | documentIdentificatiu | SI |   
 | tipusDocumentIdentificatiu | SI (NIF,NIE,PASSAPORT) |
-| tipusPersona           | NO (INTERESSAT, REPRESENTANT) |   
+| tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
 | dataInici | NO |   
@@ -246,8 +238,6 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
    "Actuacions":[
       {
          "idActuacio":"2021-E-225",
-         "documentIdentificatiu":"12345678A",
-         "tipusDocumentIdentificatiu":"NIF",
          "tipusPersona":"INTERESSAT",
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
@@ -267,8 +257,6 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
       }
       {
          "idActuacio":"2021-E-357",
-         "documentIdentificatiu":"12345678A",
-         "tipusDocumentIdentificatiu":"NIF",
          "tipusPersona":"INTERESSAT",
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
@@ -284,8 +272,6 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
       }
       {
          "idActuacio":"CP_3452",
-         "documentIdentificatiu":"12345678A",
-         "tipusDocumentIdentificatiu":"NIF",
          "tipusPersona":"INTERESSAT",
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
@@ -315,7 +301,7 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 | --- | --- |   
 | documentIdentificatiu | SI |   
 | tipusDocumentIdentificatiu | SI (NIF,NIE,PASSAPORT) |   
-| tipusPersona           | NO (INTERESSAT, REPRESENTANT) |   
+| tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
 | dataInici | NO |   
@@ -354,8 +340,6 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
    "expedients":[
       {
          "idExpedient":"2021_225",
-         "documentIdentificatiu":"12345678A",
-         "tipusDocumentIdentificatiu":"NIF",
          "tipusPersona":"INTERESSAT",
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
@@ -376,8 +360,6 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
       },
       {
          "idExpedient":"2021-356",
-         "documentIdentificatiu":"12345678A",
-         "tipusDocumentIdentificatiu":"NIF",
          "tipusPersona":"INTERESSAT",
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
