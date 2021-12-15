@@ -217,12 +217,42 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 | descripcioResultat | Retorna un string de detall de l'operació | SI |
 | actuacions | Array de resposta de les actuacions | SI |
 
-Per la possibilitat de no trobar cap actuació per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
+##### Taula de significats dels codis d'error
+
+| Codi | Significat |
+| --- | --- |
+| 200 | OK. |
+| 301 | L'URI del recurs sol·licitat ha estat canviat. Una nova URI serà rebuda a la resposta. |
+| 302 | El recurs de la URI sol·licitada ha estat canviat temporalment. Nous canvis a la URI seran agregats en el futur. Per tant, la mateixa URI ha de ser utilitzada pel client en futures sol·licituds. |
+| 400 | Sintaxi invàlida, no s'ha pogut interpretar la sol·licitud. | 
+| 401 | Cal autenticació. Aquesta és similar a 403, però en aquest cas l'autenticació és possible. | 
+| 403 | No té els permisos necessaris per a cert contingut, per la qual cosa el servidor rebutja atorgar una resposta apropiada. | 
+| 404 | No s'ha pogut trobar el contingut sol·licitat. | 
+| 500 | El servidor ha trobat una situació que no sap com gestionar-la. | 
+| 504 | Timeout. No es pot obtenir una resposta a temps. | 
+| 509 | Límit d'ample de banda excedit. | 
+
+##### Taula de descriptors dels codis d'error
+
+| Codi | Descriptors |
+| --- | --- | 
+| 200 | OK | 
+| 301 | Nova URI: https://github.com/ConsorciAOC/HubCarpetes/edit/main/README.js (aquest és un exemple, caldria retornar la URI)| 
+| 302 | El recurs de la URI sol·licitada ha estat canviat temporalment | 
+| 400 | Sintaxi invàlida, no s'ha pogut interpretar la sol·licitud | 
+| 401 | Cal autenticació | 
+| 403 | No té els permisos necessaris | 
+| 404 | No s'ha trobat cap informació | 
+| 500 | El servidor ha trobat una situació que no sap com gestionar-la | 
+| 504 | Temps d'espera excedit | 
+| 509 | Ample de banda excedit | 
+
+Per exemple, la possibilitat de no trobar cap actuació per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
 
 ```json  
 {
 "codiResultat":"404",
-"descripcioResultat":"No s'ha trobat cap actuació"
+"descripcioResultat":"No s'ha trobat cap informació"
 }
 ``` 
 
