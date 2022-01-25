@@ -18,8 +18,8 @@ Per integrar-se al servei, caldrà fer arribar a l'AOC les **URLs** de les consu
 
 Es recomana securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
-- Validar el [certificat client](/SEGELL_AOC.cer) que l'AOC presentarà al establir la connexió.
-- Filtrar per la IP `157.97.64.126` (per la qual arribarà el CAOC als serveis web oferts)
+- Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
+- Validar el [certificat client](https://www.aoc.cat/wp-content/uploads/2021/11/Serveis_Administracio_Electronica_CAOC.zip) que l'AOC presentarà al establir la connexió. El número de sèrie del certificat és 3256b8ec6a5b7db071a9ff174fc83ffb. En el cas que el vostre servidor d’aplicacions o similar, no admeti els certificats sha256 (corresponent a l’arrel de Sector Públic), llavors necessiteu afegir la clau pública del certificat final enlloc de les arrels, per a aquest cas, el podeu descarregar per a que l’afegiu al vostre truststore.
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
