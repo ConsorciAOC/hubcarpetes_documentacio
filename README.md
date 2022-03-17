@@ -385,7 +385,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "dataActuacio":"2020-04-23T18:25:43.511Z",
          "actuacioCiutada":"NO_APLICA",
          "fue":"false"
-      },
+      }
       {
          "idExpedient":"2021-356",
          "tipusPersona":"INTERESSAT",
@@ -395,7 +395,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "dataIniciExpedient":"2020-01-26T14:25:43.001Z",
          "urlExpedient":"http://www.abc.cat/e/2021_356",
          "estatExpedient":"OBERT",
-      },
+      }
       {
          "..."
       }
