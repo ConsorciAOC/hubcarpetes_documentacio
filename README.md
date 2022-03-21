@@ -76,7 +76,7 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
   "codiINE10":"9821920002",
   "codiDIR3Organisme":"L01080193",
   "tipusActuacio":"ENTRADA",
-  "dataActuacio":"2012-04-23T18:25:43.511Z",
+  "dataActuacio":"2012-04-23T18:25:43",
   "numeroRegistre":"2021-E-225",
   "assumpteActuacio":"Assumpte",
   "urlActuacio":"http://www.abc.com/698",
@@ -103,7 +103,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
-| dataActuacio           | Data de l'actuació. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |  
+| dataActuacio           | Data de l'actuació. Format YYYY-MM-DDThh:mm:ss | SI |  
 | numeroRegistre           | Número de registre en format string | NO |  
 | assumpteActuacio               | Assumpte | SI |  
 | urlActuacio            | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'actuació farà clic en aquest enllaç | SI |  
@@ -129,18 +129,18 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
    "codiINE10":"9821920002",
    "codiDIR3Organisme":"L01080193",
    "procediment":"OBRES1 - Llicència d'obres",
-   "dataIniciExpedient":"2021-04-24T01:25:43.987Z",
+   "dataIniciExpedient":"2021-04-24T01:25:43",
    "assumpteExpedient":"Llicència d'obres - Carrer principal, 34",   
    "urlExpedient":"www.seu.com/e/2021_225",
    "familia":"Obres",
    "dataPrevistaResolucio":"2021-07-26",
-   "dataFinalitzacioExpedient":"2021-07-26T18:25:43.511Z",
+   "dataFinalitzacioExpedient":"2021-07-26T18:25:43",
    "codiFase":"02",
    "descripcioFaseExpedient":"En tramitació",
    "estatExpedient":"Tancat",
    "observacionsExpedient":"Llicència - Reforma planta baixa",
    "idActuacio":"2021-E-225",
-   "dataActuacio":"2021-04-23T18:25:43.511Z",
+   "dataActuacio":"2021-04-23T18:25:43",
    "numeroRegistre":"2021-E-225",
    "assumpteActuacio":"Sol·licitud de llicència d'obres",
    "urlActuacio":"http://www.seu.cat/a/2021-E-225",
@@ -163,18 +163,18 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI|
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO|    
 | procediment | Procediment |  SI |   
-| dataIniciExpedient | Data inici. Format YYYY-MM-DDThh:mm:ss.sssZ | SI |   
+| dataIniciExpedient | Data inici. Format YYYY-MM-DDThh:mm:ss| SI |   
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
 | dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DD | NO |   
-| dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
+| dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
 | estatExpedient | Estat | NO (OBERT,TANCAT) |   
 | observacionsExpedient | Observacions sobre l'expedient que l'Ens vulgui informar | NO |   
 | idActuacio | Identificador de l'actuació  | NO |   
-| dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format YYYY-MM-DDThh:mm:ss.sssZ | NO |   
+| dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format YYYY-MM-DDThh:mm:ss | NO |   
 | numeroRegistre | Número de registre que ha donat origen a l'expedient | NO |  
 | actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part de la ciutadania | NO (SI, NO, NO_APLICA) |   
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (defecte false, true)
@@ -276,7 +276,7 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2020-05-23T18:25:43.511Z",
+         "dataActuacio":"2020-05-23T18:25:43",
          "numeroRegistre":"2021-E-225",
          "assumpteActuacio":"Sol·licitud de llicència d'obres",
          "urlActuacio":"http://www.abc.cat/a/id_43",
@@ -295,7 +295,7 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2021-08-22T19:02:43.511Z",
+         "dataActuacio":"2021-08-22T19:02:43",
          "numeroRegistre":"2021-E-357",
          "assumpteActuacio":"Sol·licitud bonificació IBI",
          "urlActuacio":"http://www.abc.cat/a/id_434",
@@ -310,7 +310,7 @@ A continuació trobareu un exemple de resposta que, per un documentIdentificatiu
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2021-10-22T19:02:43.511Z",
+         "dataActuacio":"2021-10-22T19:02:43",
          "assumpteActuacio":"Reserva cita prèvia - Cultura",
          "urlActuacio":"http://www.abc.cat/a/id_434",
          "viaPresentacio":"Electrònica",
@@ -377,7 +377,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "procediment":"OBRES1 - Llicència d'obres",
-         "dataIniciExpedient":"2020-04-24T01:25:43.987Z",
+         "dataIniciExpedient":"2020-04-24T01:25:43",
          "assumpteExpedient":"Llicència d'obres",
          "urlExpedient":"http://www.abc.cat/e/2021_225",
          "familia":"Obres",
@@ -387,7 +387,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "estatExpedient":"OBERT",
          "observacionsExpedient":"Llicència - Reforma planta baixa",
          "idActuacio":"2021-E-225",
-         "dataActuacio":"2020-04-23T18:25:43.511Z",
+         "dataActuacio":"2020-04-23T18:25:43",
          "actuacioCiutada":"NO_APLICA",
          "fue":"false"
       }
@@ -397,7 +397,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
          "codiINE10":"9821920002",
          "codiDIR3Organisme":"L01080193",
          "procediment":"Sol·licitud d'accés a la informació pública",
-         "dataIniciExpedient":"2020-01-26T14:25:43.001Z",
+         "dataIniciExpedient":"2020-01-26T14:25:43",
          "urlExpedient":"http://www.abc.cat/e/2021_356",
          "estatExpedient":"OBERT",
       }
