@@ -116,7 +116,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 
 #### Exemple JSON
 
-El model s'ha dividit en blocs d'informació integrats en la resposta: Identificador de l'objecte, de la persona, de l'ens, de l'actuació i de l'expedient. El paràmetre "dataFinalitzacioExpedient" està informat en ser un expedient tancat.
+El model s'ha dividit en blocs d'informació integrats en la resposta: Identificador de l'objecte, de la persona, de l'ens, de l'actuació i de l'expedient.
 
 ```json  
 {
@@ -262,8 +262,7 @@ TO-DO
    "codiResultat":"200",
    "descripcioResultat":"OK",
    "actuacions":[
-      {
-       "tipusDocumentIdentificatiu":"NIF",
+      {       
        "idActuacio":"2015-E-123",
        "tipusPersona":"INTERESSAT",
        "codiINE10":"9821920002",
@@ -278,8 +277,7 @@ TO-DO
        "observacionsActuacio":"Bonificació per instal·lació de planta fotovoltaica d'autoconsum",
        "fue":"false"
      },
-     {
-       "tipusDocumentIdentificatiu":"NIF",
+     {      
        "idActuacio":"2015-E-124",
        "tipusPersona":"INTERESSAT",
        "codiINE10":"9821920002",
