@@ -24,7 +24,6 @@ Es recomana securitzar els endpoints exposats:
 Per a les proves, es recomana no fer servir NIFs que puguin ser reals. Si us plau, en cas d'estructurar informació i caldre, recomanem fer servir:
 - 99999018D
 - 99999972C
-- 99999974E
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
@@ -71,22 +70,19 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 
 ```json  
 {
-  "idActuacio":"id_43",
-  "tipusPersona":"REPRESENTANT",
+  "idActuacio":"2015-E-126",
+  "tipusPersona":"INTERESSAT",
   "codiINE10":"9821920002",
   "codiDIR3Organisme":"L01080193",
-  "tipusActuacio":"ENTRADA",
-  "dataActuacio":"2012-04-23T18:25:43",
-  "numeroRegistre":"2021-E-225",
-  "assumpteActuacio":"Assumpte",
-  "urlActuacio":"http://www.abc.com/698",
+  "tipusActuacio":"SORTIDA",
+  "dataActuacio":"2015-02-03T12:00:00",
+  "numeroRegistre":"2015-E-126",
+  "assumpteActuacio":"Duplicat padró",
+  "urlActuacio":"http://www.abc.cat/a/id_2015_126",
   "viaPresentacio":"Electrònica",
   "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
-  "observacionsActuacio":"Observacions",
-  "idExpedient":"2021-225",
-  "urlExpedient":"http://www.abc.com/2021_225",
-  "procediment":"Llicència d'obres",
-  "referenciaExterna":"Llicència 116/2021 - Reforma planta baixa",   
+  "observacionsActuacio":"Duplicat padró",
+  "idExpedient":"EXP-ID-1",
   "fue":"false"
 }
 ```  
@@ -124,26 +120,22 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 
 ```json  
 {
-   "idExpedient":"2021_225",
+   "idExpedient":"EXP-2021-1",
    "tipusPersona":"INTERESSAT",
-   "codiINE10":"9821920002",
+   "codiINE10":"801930008",
    "codiDIR3Organisme":"L01080193",
-   "procediment":"OBRES1 - Llicència d'obres",
-   "dataIniciExpedient":"2021-04-24T01:25:43",
-   "assumpteExpedient":"Llicència d'obres - Carrer principal, 34",   
-   "urlExpedient":"www.seu.com/e/2021_225",
+   "procediment":"OBRES1 - llicència d'obres",
+   "dataIniciExpedient":"2021-07-25T01:25:43",
+   "assumpteExpedient":"llicència d'obres",
+   "urlExpedient":"http://www.abc.cat/e/2021_225",
    "familia":"Obres",
-   "dataPrevistaResolucio":"2021-07-26",
-   "dataFinalitzacioExpedient":"2021-07-26T18:25:43",
+   "dataPrevistaResolucio":"2021-07-25T00:00:00",
    "codiFase":"02",
    "descripcioFaseExpedient":"En tramitació",
-   "estatExpedient":"Tancat",
-   "observacionsExpedient":"Llicència - Reforma planta baixa",
+   "estatExpedient":"OBERT",
+   "observacionsExpedient":"llicència - Reforma planta baixa",
    "idActuacio":"2021-E-225",
-   "dataActuacio":"2021-04-23T18:25:43",
-   "numeroRegistre":"2021-E-225",
-   "assumpteActuacio":"Sol·licitud de llicència d'obres",
-   "urlActuacio":"http://www.seu.cat/a/2021-E-225",
+   "dataActuacio":"2021-05-23T18:25:43",
    "actuacioCiutada":"NO_APLICA",
    "fue":"false"
 }
@@ -211,7 +203,7 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 
 ##### Exemple peticio  
 
-`GET /consultaActuacions?documentIdentificatiu=12345678A&tipusDocumentIdentificatiu=NIF&tipusPersona=INTERESSAT&dataInici=2020-04-23T18:25:43.511Z&dataFi=2021-04-23T18:25:43.511Z&tipusActuacio=ENTRADA&fue=true`
+`GET /consultaActuacions?documentIdentificatiu=99999018D&tipusDocumentIdentificatiu=NIF&tipusPersona=INTERESSAT`
 
 
 ##### Descripcio camps resposta   
@@ -263,60 +255,45 @@ Per exemple, la possibilitat de no trobar cap actuació per fer el retorn, en ba
 
 ##### Exemple resposta
 
-A continuació trobareu un exemple de resposta que, per un documentIdentificatiu, es retornen tres actuacions. La primera està vinculada a un expedient, la segona encara no en té i la tercera és una actuació que no esdebé registre d'entrada però genera evidència. Aquest darrer cas, és una situació extraordinària i es contemplada per relacions amb l'Administració que s'han deixat fora del registre central (reserva de pistes exportives, cita prèvia, trucades informatives, peticions informals, etc).
+TO-DO
 
 ```json  
 {
    "codiResultat":"200",
    "descripcioResultat":"OK",
-   "Actuacions":[
+   "actuacions":[
       {
-         "idActuacio":"2021-E-225",
-         "tipusPersona":"INTERESSAT",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2020-05-23T18:25:43",
-         "numeroRegistre":"2021-E-225",
-         "assumpteActuacio":"Sol·licitud de llicència d'obres",
-         "urlActuacio":"http://www.abc.cat/a/id_43",
-         "viaPresentacio":"Electrònica",
-         "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",         
-         "observacionsActuacio":"Si us plau, voldrem començar l'actuació lo abans possible",
-         "idExpedient":"2021_225",
-         "urlExpedient":"http://www.abc.cat/e/2021_225",
-         "procediment":"OBRES1 - Llicència d'obres",
-         "referenciaExterna":"Llicència 116/2021 - Reforma planta baixa",   
-         "fue":"false"
-      }
-      {
-         "idActuacio":"2021-E-357",
-         "tipusPersona":"INTERESSAT",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2021-08-22T19:02:43",
-         "numeroRegistre":"2021-E-357",
-         "assumpteActuacio":"Sol·licitud bonificació IBI",
-         "urlActuacio":"http://www.abc.cat/a/id_434",
-         "viaPresentacio":"Electrònica",
-         "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
-         "observacionsActuacio":"Bonificació per instal·lació de planta fotovoltaica d'autoconsum",
-         "fue":"false"
-      }
-      {
-         "idActuacio":"CP_3452",
-         "tipusPersona":"INTERESSAT",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "tipusActuacio":"ENTRADA",
-         "dataActuacio":"2021-10-22T19:02:43",
-         "assumpteActuacio":"Reserva cita prèvia - Cultura",
-         "urlActuacio":"http://www.abc.cat/a/id_434",
-         "viaPresentacio":"Electrònica",
-         "observacionsActuacio":"Reserva de cita prèvia pel 17/12/2021",
-         "fue":"false"
-      }
+       "tipusDocumentIdentificatiu":"NIF",
+       "idActuacio":"2015-E-123",
+       "tipusPersona":"INTERESSAT",
+       "codiINE10":"9821920002",
+       "codiDIR3Organisme":"L01080193",
+       "tipusActuacio":"ENTRADA",
+       "dataActuacio":"2015-01-01T10:00:00",
+       "numeroRegistre":"2015-E-357",
+       "assumpteActuacio":"Sol·licitud bonificació IBI",
+       "urlActuacio":"http://www.abc.cat/a/id_2015_123",
+       "viaPresentacio":"Electrònica",
+       "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
+       "observacionsActuacio":"Bonificació per instal·lació de planta fotovoltaica d'autoconsum",
+       "fue":"false"
+     },
+     {
+       "tipusDocumentIdentificatiu":"NIF",
+       "idActuacio":"2015-E-124",
+       "tipusPersona":"INTERESSAT",
+       "codiINE10":"9821920002",
+       "codiDIR3Organisme":"L01080193",
+       "tipusActuacio":"ENTRADA",
+       "dataActuacio":"2015-01-02T12:00:00",
+       "numeroRegistre":"2015-E-124",
+       "assumpteActuacio":"Reserva cita prèvia - Cultura",
+       "urlActuacio":"http://www.abc.cat/a/id_2015_124",
+       "viaPresentacio":"Electrònica",
+       "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
+       "observacionsActuacio":"Reserva cita prèvia - Cultura",
+       "fue":"false"
+     }
     ]
  }
 ```
@@ -345,7 +322,7 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 
 ##### Exemple peticio  
 
-`GET /consultaExpedients?documentIdentificatiu=12345678A&tipusDocumentIdentificatiu=NIF&dataInici=2019-04-26T08:25:43.123Z&dataFi=2022-04-26T08:25:43.123Z&estat=OBERT&fue=false}`  
+`GET /consultaExpedients?documentIdentificatiu=99999018D&tipusDocumentIdentificatiu=NIF}`  
 
 ##### Descripcio camps resposta   
 
@@ -366,44 +343,53 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
 
 ##### Exemple resposta
 
+TO-DO
+
 ```json  
 {
    "codiResultat":"200",
    "descripcioResultat":"OK",
    "expedients":[
       {
-         "idExpedient":"2021_225",
-         "tipusPersona":"INTERESSAT",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "procediment":"OBRES1 - Llicència d'obres",
-         "dataIniciExpedient":"2020-04-24T01:25:43",
-         "assumpteExpedient":"Llicència d'obres",
-         "urlExpedient":"http://www.abc.cat/e/2021_225",
-         "familia":"Obres",
-         "dataPrevistaResolucio":"2020-04-26",
-         "codiFase":"02",
-         "descripcioFaseExpedient":"En tramitació",
-         "estatExpedient":"OBERT",
-         "observacionsExpedient":"Llicència - Reforma planta baixa",
-         "idActuacio":"2021-E-225",
-         "dataActuacio":"2020-04-23T18:25:43",
-         "actuacioCiutada":"NO_APLICA",
-         "fue":"false"
-      }
-      {
-         "idExpedient":"2021-356",
-         "tipusPersona":"INTERESSAT",
-         "codiINE10":"9821920002",
-         "codiDIR3Organisme":"L01080193",
-         "procediment":"Sol·licitud d'accés a la informació pública",
-         "dataIniciExpedient":"2020-01-26T14:25:43",
-         "urlExpedient":"http://www.abc.cat/e/2021_356",
-         "estatExpedient":"OBERT",
-      }
-      {
-         "..."
-      }
+      "idExpedient":"EXP-2021-1",
+      "tipusPersona":"INTERESSAT",
+      "codiINE10":"801930008",
+      "codiDIR3Organisme":"L01080193",
+      "procediment":"OBRES1 - llicència d'obres",
+      "dataIniciExpedient":"2021-07-25T01:25:43",
+      "assumpteExpedient":"llicència d'obres",
+      "urlExpedient":"http://www.abc.cat/e/2021_225",
+      "familia":"Obres",
+      "dataPrevistaResolucio":"2021-07-25T00:00:00",
+      "codiFase":"02",
+      "descripcioFaseExpedient":"En tramitació",
+      "estatExpedient":"OBERT",
+      "observacionsExpedient":"llicència - Reforma planta baixa",
+      "idActuacio":"2021-E-225",
+      "dataActuacio":"2021-05-23T18:25:43",
+      "actuacioCiutada":"NO_APLICA",
+      "fue":"false"
+    },
+    {
+      "idExpedient":"EXP-2021-2",
+      "tipusPersona":"INTERESSAT",
+      "codiINE10":"801930008",
+      "codiDIR3Organisme":"L01080193",
+      "procediment":"Sol·licitud beca menjador escolar",
+      "dataIniciExpedient":"2021-07-25T01:25:43",
+      "assumpteExpedient":"Beca menjador",
+      "urlExpedient":"http://www.abc.cat/e/2021_2",
+      "familia":"Beques",
+      "dataPrevistaResolucio":"2021-07-25T00:00:00",
+      "codiFase":"02",
+      "descripcioFaseExpedient":"En tramitació",
+      "estatExpedient":"OBERT",
+      "observacionsExpedient":"En curs",
+      "idActuacio":"2021-E-225",
+      "dataActuacio":"2021-05-23T18:25:43",
+      "actuacioCiutada":"NO_APLICA",
+      "fue":"false"
+    }
    ]
 }  
 ```  
