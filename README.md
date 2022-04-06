@@ -255,7 +255,7 @@ Per exemple, la possibilitat de no trobar cap actuació per fer el retorn, en ba
 
 ##### Exemple resposta
 
-TO-DO
+En aquest exemple, la resposta conté dues actuacions: un registre d'entrada i una petició de cita prèvia.
 
 ```json  
 {
@@ -341,7 +341,7 @@ Per la possibilitat de no trobar cap expedient per fer el retorn, en base a un d
 
 ##### Exemple resposta
 
-TO-DO
+En aquest exemple, la resposta conté dos expedients: un sobre una llicència d'obres i un altre sobre una beca.
 
 ```json  
 {
