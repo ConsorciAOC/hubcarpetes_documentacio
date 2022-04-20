@@ -195,8 +195,8 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 | tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
-| dataInici | NO |   
-| dataFi | NO |   
+| dataInici | NO (Format YYYY-MM-DD) |   
+| dataFi | NO (Format YYYY-MM-DD) |   
 | tipusActuacio | NO |   
 | fue | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
 
@@ -268,7 +268,7 @@ En aquest exemple, la resposta conté dues actuacions: un registre d'entrada i u
        "codiINE10":"9821920002",
        "codiDIR3Organisme":"L01080193",
        "tipusActuacio":"ENTRADA",
-       "dataActuacio":"2015-01-01T10:00:00",
+       "dataActuacio":"2015-01-01",
        "numeroRegistre":"2015-E-357",
        "assumpteActuacio":"Sol·licitud bonificació IBI",
        "urlActuacio":"http://www.abc.cat/a/id_2015_123",
@@ -283,7 +283,7 @@ En aquest exemple, la resposta conté dues actuacions: un registre d'entrada i u
        "codiINE10":"9821920002",
        "codiDIR3Organisme":"L01080193",
        "tipusActuacio":"ENTRADA",
-       "dataActuacio":"2015-01-02T12:00:00",
+       "dataActuacio":"2015-01-02",
        "numeroRegistre":"2015-E-124",
        "assumpteActuacio":"Reserva cita prèvia - Cultura",
        "urlActuacio":"http://www.abc.cat/a/id_2015_124",
@@ -313,8 +313,8 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 | tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
-| dataInici | NO |   
-| dataFi | NO |   
+| dataInici | NO (Format YYYY-MM-DD) |   
+| dataFi | NO (Format YYYY-MM-DD) |   
 | estat | NO (OBERT,TANCAT) |   
 | fue | NO (no informat: tots, true: expedients FUE, false: expedients no FUE)
 
@@ -358,7 +358,7 @@ En aquest exemple, la resposta conté dos expedients: un sobre una llicència d'
       "assumpteExpedient":"llicència d'obres",
       "urlExpedient":"http://www.abc.cat/e/2021_225",
       "familia":"Obres",
-      "dataPrevistaResolucio":"2021-07-25T00:00:00",
+      "dataPrevistaResolucio":"2021-07-25",
       "codiFase":"02",
       "descripcioFaseExpedient":"En tramitació",
       "estatExpedient":"OBERT",
@@ -378,7 +378,7 @@ En aquest exemple, la resposta conté dos expedients: un sobre una llicència d'
       "assumpteExpedient":"Beca menjador",
       "urlExpedient":"http://www.abc.cat/e/2021_2",
       "familia":"Beques",
-      "dataPrevistaResolucio":"2021-07-25T00:00:00",
+      "dataPrevistaResolucio":"2021-07-25",
       "codiFase":"02",
       "descripcioFaseExpedient":"En tramitació",
       "estatExpedient":"OBERT",
