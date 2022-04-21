@@ -159,7 +159,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
-| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DD | NO |   
+| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DDThh:mm:ss | NO |   
 | dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
