@@ -75,7 +75,7 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
   "codiINE10":"9821920002",
   "codiDIR3Organisme":"L01080193",
   "tipusActuacio":"SORTIDA",
-  "dataActuacio":"2015-02-03T12:00:00",
+  "dataActuacio":"2015-02-03T12:01:05",
   "numeroRegistre":"2015-E-126",
   "assumpteActuacio":"Duplicat padró",
   "urlActuacio":"http://www.abc.cat/a/id_2015_126",
@@ -159,7 +159,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
-| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DDThh:mm:ss | NO |   
+| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DD | NO |   
 | dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
@@ -188,17 +188,17 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 
 ##### Descripcio camps   
 
-|   Paràmetre  |  Obligatori  |   
-| --- | --- |   
-| documentIdentificatiu | SI |   
-| tipusDocumentIdentificatiu | SI (NIF,NIE,PASSAPORT) |
-| tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
-| codiINE10 | NO |   
-| codiDIR3Organisme | NO |   
-| dataInici | NO (Format YYYY-MM-DD) |   
-| dataFi | NO (Format YYYY-MM-DD) |   
-| tipusActuacio | NO |   
-| fue | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
+|   Paràmetre  | Descripció | Obligatori  |   
+| --- | --- | --- |   
+| documentIdentificatiu | Document identificatiu de la persona | SI |   
+| tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
+| tipusPersona | Tipus de rol de la persona en relació a l'actuació | NO (INTERESSAT, REPRESENTANT) |   
+| codiINE10 | Codi INE10 | NO |   
+| codiDIR3Organisme | Codi DIR3 | NO |   
+| dataInici | Data d'inici de la informació consultada | NO (Format YYYY-MM-DD) |   
+| dataFi | Data de fi de la informació consultada | NO (Format YYYY-MM-DD) |   
+| tipusActuacio | Tipus d'actuació | NO (ENTRADA, SORTIDA)| 
+| fue | Determinació de si es tracta d'un tràmit FUE | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
 
 
 ##### Exemple peticio  
@@ -268,7 +268,7 @@ En aquest exemple, la resposta conté dues actuacions: un registre d'entrada i u
        "codiINE10":"9821920002",
        "codiDIR3Organisme":"L01080193",
        "tipusActuacio":"ENTRADA",
-       "dataActuacio":"2015-01-01",
+       "dataActuacio":"2015-01-01T01:25:43",
        "numeroRegistre":"2015-E-357",
        "assumpteActuacio":"Sol·licitud bonificació IBI",
        "urlActuacio":"http://www.abc.cat/a/id_2015_123",
@@ -283,7 +283,7 @@ En aquest exemple, la resposta conté dues actuacions: un registre d'entrada i u
        "codiINE10":"9821920002",
        "codiDIR3Organisme":"L01080193",
        "tipusActuacio":"ENTRADA",
-       "dataActuacio":"2015-01-02",
+       "dataActuacio":"2015-01-02T01:25:43",
        "numeroRegistre":"2015-E-124",
        "assumpteActuacio":"Reserva cita prèvia - Cultura",
        "urlActuacio":"http://www.abc.cat/a/id_2015_124",
