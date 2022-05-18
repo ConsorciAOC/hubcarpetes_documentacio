@@ -25,8 +25,8 @@ El HCC ofereix a més un entorn de proves (preproducció) per poder per validar 
 
 
 Per a les proves, també es recomana no fer servir NIFs que puguin ser reals. Si us plau, en cas d'estructurar informació i caldre, recomanem fer servir:
-- 99999018D
 - 99999972C
+- 99999974E
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
