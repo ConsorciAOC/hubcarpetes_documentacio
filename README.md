@@ -3,7 +3,34 @@ Projecte de documentació per als integradors del Hub de Carpetes Ciutadanes (HC
 
 Com a primers passos, abans de les tasques d'integració, es recomana la lectura del [document de presentació](/presentacio_myg_20201105.pdf).
 
-Per integrar-se al servei, caldrà fer arribar a l'AOC les **URLs** de les consultes. El model de desenvolupament es concretarà en fases i podria variar durant el temps:
+Per integrar-se al servei, els passos a fer són els següents:
+
+A) Preproducció
+1. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes".
+2. Dur a terme el desenvolupament explicat en aquest repositori documental i fer arribar a l'AOC les **URLs** de les consultes.
+3. Un cop validades a preproducció les funcionalitats dels endpoints per part de l'AOC, fixar la data de sortida a producció i seguir els passos de B) Producció.
+
+El HCC ofereix a més un entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per interactuar amb aquest entorn es recomana fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client.
+
+Per a les proves, també es recomana **no** fer servir NIFs que puguin ser reals. Si us plau, recomanem fer servir:
+- 99999972C -> persona física
+- 99999974E -> persona física representant de persona jurídica
+
+Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a preproducció.
+
+B) Producció
+1. Es recomana securitzar els endpoints exposats.
+2. Presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat.
+3. Indicar al formulari de suport les URLS definitives de les consultes.
+
+Per a la sortida a producció, es recomana securitzar els endpoints exposats:
+- Comunicacions via HTTPS.
+- Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
+- Validar el [certificat client](https://www.aoc.cat/wp-content/uploads/2021/11/Serveis_Administracio_Electronica_CAOC.zip) que l'AOC presentarà al establir la connexió. El número de sèrie del certificat és 3256b8ec6a5b7db071a9ff174fc83ffb. En el cas que el vostre servidor d’aplicacions o similar, no admeti els certificats sha256 (corresponent a l’arrel de Sector Públic), llavors necessiteu afegir la clau pública del certificat final enlloc de les arrels, per a aquest cas, el podeu descarregar per a que l’afegiu al vostre truststore.
+
+Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a producció.
+
+El model de desenvolupament es concretarà en fases i podria variar durant el temps:
 
 1. Primera fase de desenvolupament (Prioritzada)
     1. [Consulta d'actuacions](#1-consulta-dactuacions) (Prioritat alta)
@@ -15,20 +42,6 @@ Per integrar-se al servei, caldrà fer arribar a l'AOC les **URLs** de les consu
     3. Consulta detallada d'un expedient
 
     Aquesta segona fase està pendent de ser concretada i es troba en estat d'esborrany.
-
-Per a la sortida a producció, es recomana securitzar els endpoints exposats:
-- Comunicacions via HTTPS.
-- Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
-- Validar el [certificat client](https://www.aoc.cat/wp-content/uploads/2021/11/Serveis_Administracio_Electronica_CAOC.zip) que l'AOC presentarà al establir la connexió. El número de sèrie del certificat és 3256b8ec6a5b7db071a9ff174fc83ffb. En el cas que el vostre servidor d’aplicacions o similar, no admeti els certificats sha256 (corresponent a l’arrel de Sector Públic), llavors necessiteu afegir la clau pública del certificat final enlloc de les arrels, per a aquest cas, el podeu descarregar per a que l’afegiu al vostre truststore.
-
-El HCC ofereix a més un entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per interactuar amb aquest entorn es recomana fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client.
-
-
-Per a les proves, també es recomana no fer servir NIFs que puguin ser reals. Si us plau, en cas d'estructurar informació i caldre, recomanem fer servir:
-- 99999972C
-- 99999974E
-
-Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
 
 _Aquest document està en fase d'esborrany i pot patir canvis._
