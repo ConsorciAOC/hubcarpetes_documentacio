@@ -6,22 +6,21 @@ Com a primers passos, abans de les tasques d'integració, es recomana la lectura
 Per integrar-se al servei, els passos a fer són els següents:
 
 A) Preproducció
-1. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes".
-2. Dur a terme el desenvolupament explicat en aquest repositori documental i fer arribar a l'AOC les **URLs** de les consultes.
+1. Dur a terme el desenvolupament explicat en aquest repositori documental
+2. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes". Afegir al mateix les **URLs** dels endpoints amb exemples de les consultes.
 3. Un cop validades a preproducció les funcionalitats dels endpoints per part de l'AOC, fixar la data de sortida a producció i seguir els passos de B) Producció.
 
-El HCC ofereix a més un entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per interactuar amb aquest entorn es recomana fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client.
+El HCC revisara la integració a l'entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per fer correctament les comprovacions dels vostres endpoints podeu fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client durant la fase de preproducció.
 
-Per a les proves, també es recomana **no** fer servir NIFs que puguin ser reals. Si us plau, recomanem fer servir:
+Per a les proves, també es demana **no** fer servir NIFs que puguin ser reals. Si us plau, cal fer servir el següents:
 - 99999972C -> persona física
 - 99999974E -> persona física representant de persona jurídica
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a preproducció.
 
 B) Producció
-1. Es recomana securitzar els endpoints exposats.
-2. Presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat.
-3. Indicar al formulari de suport les URLS definitives de les consultes.
+1. Cal securitzar els endpoints exposats.
+2. Presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat. Indicant a l'assumpte "Integració en producció de El meu espai - Hub de Carpetes Ciutadanes" i determinant al cos del formulari de suport les URLS definitives de les consultes.
 
 Per a la sortida a producció, es recomana securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
