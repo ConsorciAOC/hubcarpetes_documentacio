@@ -7,14 +7,23 @@ Per integrar-se al servei, els passos a fer són els següents:
 
 A) Preproducció
 1. Dur a terme el desenvolupament explicat en aquest repositori documental
-2. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes". Afegir al mateix les **URLs** dels endpoints amb exemples de les consultes.
+2. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes". Afegint al mateix les **URLs** dels endpoints amb exemples de les consultes.
 3. Un cop validades a preproducció les funcionalitats dels endpoints per part de l'AOC, fixar la data de sortida a producció i seguir els passos de B) Producció.
 
-El HCC revisara la integració a l'entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per fer correctament les comprovacions dels vostres endpoints podeu fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client durant la fase de preproducció.
+El HCC revisara la integració a l'entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per fer correctament les comprovacions dels vostres endpoints a preproducció, podeu fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client durant la fase de preproducció.
 
-Per a les proves, també es demana **no** fer servir NIFs que puguin ser reals. Si us plau, cal fer servir el següents:
-- 99999972C -> persona física
-- 99999974E -> persona física representant de persona jurídica
+Per a les proves, si us plau **no** fer servir NIFs de persones reals. En concret, cal fer servir:
+|       NIF      | Nom o Raó social | Cognom1 | Cognom2 | Casos d'ús |  
+| ---------------| --- | --- | --- | --- |
+| 99999972C | Ciutadania | Fictícia | PF | Persona física |
+| 99999974E | Ciutadania | Fictícia | PFRPJ | Persona física representant de persona jurídica |
+| A01111114 | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 99999974E |
+
+Per a validar els endpoints a preproducció cal:
+A) 3 registres o més de NIF 99999972C + Tres reg. o més de NIF 99999974E representant de la persona jurídica A01111114.
+B) 2 expedients o més de cadascú de NIF 99999972C + Tres reg. o més NIF 99999974E representant A01111114.
+
+Per assegurar la qualitat de les proves a preproducció, és necessari que tant els assentaments registrals o actuacions com els expedients siguin els més reals possibles però sense contenir dades personals.
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a preproducció.
 
@@ -22,7 +31,7 @@ B) Producció
 1. Cal securitzar els endpoints exposats.
 2. Presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat. Indicant a l'assumpte "Integració en producció de El meu espai - Hub de Carpetes Ciutadanes" i determinant al cos del formulari de suport les URLS definitives de les consultes.
 
-Per a la sortida a producció, es recomana securitzar els endpoints exposats:
+Per a la sortida a producció, cal securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
 - Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
 - Validar el [certificat client](https://www.aoc.cat/wp-content/uploads/2021/11/Serveis_Administracio_Electronica_CAOC.zip) que l'AOC presentarà al establir la connexió. El número de sèrie del certificat és 3256b8ec6a5b7db071a9ff174fc83ffb. En el cas que el vostre servidor d’aplicacions o similar, no admeti els certificats sha256 (corresponent a l’arrel de Sector Públic), llavors necessiteu afegir la clau pública del certificat final enlloc de les arrels, per a aquest cas, el podeu descarregar per a que l’afegiu al vostre truststore.
