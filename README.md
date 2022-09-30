@@ -20,8 +20,10 @@ Per a les proves, si us plau **no** fer servir NIFs de persones reals. En concre
 | A01111114 | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 99999974E |
 
 Per a validar els endpoints a preproducció cal:
+
 A) 3 registres o més de NIF 99999972C + Tres reg. o més de NIF 99999974E representant de la persona jurídica A01111114.
-B) 2 expedients o més de cadascú de NIF 99999972C + Tres reg. o més NIF 99999974E representant A01111114.
+
+B) 2 expedients o més de NIF 99999972C + Tres exp. o més de NIF 99999974E representant A01111114.
 
 Per assegurar la qualitat de les proves a preproducció, és necessari que tant els assentaments registrals o actuacions com els expedients siguin els més reals possibles però sense contenir dades personals.
 
