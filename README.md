@@ -125,7 +125,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
-| dataActuacio           | Data de l'actuació. Format YYYY-MM-DDThh:mm:ss | SI |  
+| dataActuacio           | Data de l'actuació. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |  
 | numeroRegistre           | Número de registre en format string | NO |  
 | assumpteActuacio               | Assumpte | SI |  
 | urlActuacio            | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'actuació farà clic en aquest enllaç | SI |  
@@ -181,18 +181,18 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI|
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO|    
 | procediment | Procediment |  SI |   
-| dataIniciExpedient | Data inici. Format YYYY-MM-DDThh:mm:ss| SI |   
+| dataIniciExpedient | Data inici. Format ISO_8601 YYYY-MM-DDThh:mm:ss| SI |   
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
-| dataPrevistaResolucio | Data prevista resolució. Format YYYY-MM-DD | NO |   
-| dataFinalitzacioExpedient | Data finalització. Format YYYY-MM-DDThh:mm:ss | NO |   
+| dataPrevistaResolucio | Data prevista resolució. Format ISO_8601 YYYY-MM-DD | NO |   
+| dataFinalitzacioExpedient | Data finalització. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
 | estatExpedient | Estat | NO (OBERT,TANCAT) |   
 | observacionsExpedient | Observacions sobre l'expedient que l'Ens vulgui informar | NO |   
 | idActuacio | Identificador de l'actuació  | NO |   
-| dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format YYYY-MM-DDThh:mm:ss | NO |   
+| dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
 | numeroRegistre | Número de registre que ha donat origen a l'expedient | NO |  
 | actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part de la ciutadania | NO (SI, NO, NO_APLICA) |   
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (defecte false, true)
@@ -221,8 +221,8 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 | tipusPersona | Tipus de rol de la persona en relació a l'actuació | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | Codi INE10 | NO |   
 | codiDIR3Organisme | Codi DIR3 | NO |   
-| dataInici | Data d'inici de la informació consultada | NO (Format YYYY-MM-DD) |   
-| dataFi | Data de fi de la informació consultada | NO (Format YYYY-MM-DD) |   
+| dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
+| dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
 | tipusActuacio | Tipus d'actuació | NO (ENTRADA, SORTIDA)| 
 | fue | Determinació de si es tracta d'un tràmit FUE | NO (no informat: totes, true: actuacions FUE, false: actuacions no FUE)
 
@@ -339,8 +339,8 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 | tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
 | codiINE10 | NO |   
 | codiDIR3Organisme | NO |   
-| dataInici | NO (Format YYYY-MM-DD) |   
-| dataFi | NO (Format YYYY-MM-DD) |   
+| dataInici | NO (Format ISO_8601 YYYY-MM-DD) |   
+| dataFi | NO (Format ISO_8601 YYYY-MM-DD) |   
 | estat | NO (OBERT,TANCAT) |   
 | fue | NO (no informat: tots, true: expedients FUE, false: expedients no FUE)
 
