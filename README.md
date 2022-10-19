@@ -127,12 +127,12 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | idActuacio          | Identificador de l'actuació | SI |  
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
 | codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
-| codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
 | dataActuacio           | Data de l'actuació. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |  
-| numeroRegistre           | Número de registre en format string | NO |  
 | assumpteActuacio               | Assumpte | SI |  
 | urlActuacio            | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'actuació farà clic en aquest enllaç | SI |  
+| codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
+| numeroRegistre           | Número de registre en format string | NO |  
 | viaPresentacio         | Via de presentació | NO |  
 | canalPreferentNotificacio         | Canal preferent | NO (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
 | observacionsActuacio   | Observacions sobre l'expedient que l'Ens vulgui informar | NO |  
@@ -183,11 +183,11 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | idExpedient | Identificador de l'expedient | SI |  
 | tipusPersona  | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
 | codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI|
-| codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO|    
 | procediment | Procediment |  SI |   
 | dataIniciExpedient | Data inici. Format ISO_8601 YYYY-MM-DDThh:mm:ss| SI |   
 | assumpteExpedient | Assumpte |  SI  |   
 | urlExpedient | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | SI |   
+| codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | NO|    
 | familia |  Família o materia sobre el qual tracta el procediment. | NO |   
 | dataPrevistaResolucio | Data prevista resolució. Format ISO_8601 YYYY-MM-DD | NO |   
 | dataFinalitzacioExpedient | Data finalització. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
