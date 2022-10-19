@@ -88,6 +88,33 @@ Abans de les tasques d'integració, es recomana la lectura del [document de pres
 
 A continuació, es descriuen els atributs i l'estructura dels objectes d'intercanvi d'informació entre el HCC i els ens integrats. Podeu trobar la informació en detall a cadascuna de les consultes.
 
+Al construir les respostes JSON, cal no informar aquells camps opcionals on no es retorni cap valor o valor buit.
+
+Incorrecte (s'informa el camp _cognomRepresentant_ com una cadena buida de caràcters):
+```json
+"actuacions": [
+    {
+        "idActuacio": "1",
+        "tipusPersona": "INTERESSAT",
+        "nomRepresentant": "Joan",
+        "cognomRepresentant": "",
+        "nomInteressat": "Pere",     
+        
+    }
+```
+
+Correcte:
+```json
+"actuacions": [
+    {
+        "idActuacio": "1",
+        "tipusPersona": "INTERESSAT",
+        "nomRepresentant": "Joan",
+        "nomInteressat": "Pere",
+        
+    }
+```
+    
 ### Actuacio
 
 #### Exemple JSON
