@@ -7,8 +7,8 @@ Com a primers passos, abans de les tasques d'integració, es recomana la lectura
 ## Integració
 Per integrar-se al servei, els passos a fer són els següents:
 
-### Preproducció
-1. Dur a terme el desenvolupament explicat en aquest repositori documental
+### A. Preproducció
+1. Dur a terme el desenvolupament explicat en aquest repositori documental.
 2. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes". Afegint al mateix les **URLs** dels endpoints amb exemples de les consultes.
 3. Un cop validades a preproducció les funcionalitats dels endpoints per part de l'AOC, fixar la data de sortida a producció i seguir els passos de B) Producció.
 
@@ -35,13 +35,12 @@ Per assegurar la qualitat de les proves a preproducció, és necessari que tant 
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a preproducció.
 
-### Producció
+### B. Producció
 Cal presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat. Indicant a l'assumpte "Integració en producció de El meu espai - Hub de Carpetes Ciutadanes" i determinant al cos del formulari de suport les URLS definitives de les consultes.
 
 Per a la sortida a producció, cal securitzar els endpoints exposats:
 - Comunicacions via HTTPS.
 - Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
-- Validar el [certificat client](https://www.aoc.cat/wp-content/uploads/2021/11/Serveis_Administracio_Electronica_CAOC.zip) que l'AOC presentarà al establir la connexió. El número de sèrie del certificat és 3256b8ec6a5b7db071a9ff174fc83ffb. En el cas que el vostre servidor d’aplicacions o similar, no admeti els certificats sha256 (corresponent a l’arrel de Sector Públic), llavors necessiteu afegir la clau pública del certificat final enlloc de les arrels, per a aquest cas, el podeu descarregar per a que l’afegiu al vostre truststore.
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a producció.
 
