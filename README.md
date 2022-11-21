@@ -118,7 +118,7 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
 
 #### Descripcio camps  
 
-També trobareu la totalitat de paràmetres previstos actualment en el [model de dades de la resposta](/model_dades_mygov.xslx).
+També trobareu la totalitat de paràmetres previstos actualment en el [model de dades de la resposta](/model_dades_mygov.xlsx).
 Els paràmetres segueixen una estructura determinada pel nom del mateix en minúscules i, opcionalment, l'àmbit: "parametre" i "parametreAmbit".
 
 |       Paràmetre      | Descripció | Obligatori |  
