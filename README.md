@@ -38,10 +38,11 @@ Un cop l'AOC tingui la informació necessària per consultar les dades, validar�
 ### B. Producció
 Cal presentar un nou formulari de contacte del portal de Suport: [https://suport-integradors.aoc.cat/hc/ca/requests/new](https://suport-integradors.aoc.cat/hc/ca/requests/new) annexant [el document de sol·licitud d’integració](https://github.com/ConsorciAOC/Integracio-Serveis/raw/main/documentAlta/formulari_sol-licitud_integracio_serveis_caoc.pdf) signat. Indicant a l'assumpte "Integració en producció de El meu espai - Hub de Carpetes Ciutadanes" i determinant al cos del formulari de suport les URLS definitives de les consultes (PRE i PRO o, com a mínim, PRO).
 
-Per a la sortida a producció, cal securitzar els endpoints exposats:
-- Comunicacions via HTTPS.
-- Habilitar les IPs per les quals arribarà el CAOC als serveis web oferts: `157.97.64.126` i `157.97.65.88`.
+Els endpoints de les consultes han d'estar publicats a la mateixa url base, per exemple:
+- URL de consulta d'actuacions > https://serveis.ajuntament.cat/hub/consultaActuacions
+- URL de consulta d'expedients > https://serveis.ajuntament.cat/hub/consultaExpedients
 
+Per a la sortida a producció, cal securitzar els endpoints exposats a través de comunicacions via HTTPS.
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a producció.
 
 El model de desenvolupament es concretarà en fases i podria variar durant el temps:
