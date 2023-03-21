@@ -193,7 +193,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | dataFinalitzacioExpedient | Data finalització. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
 | codiFase |  Codificació de la fase en que es troba la tramitació de l'expedient. Pendent de definir el model tancat de les fases de tramitació de l'expedient per part de l'AOC. | NO |
 | descripcioFase | Descripció de la FASE de tramitació de l'expedient, d'acord a la terminologia interna que faci servir l'Ens | NO |   
-| estatExpedient | Estat | NO (OBERT,TANCAT) |   
+| estatExpedient | Estat | SI (OBERT,TANCAT) |   
 | observacionsExpedient | Observacions sobre l'expedient que l'Ens vulgui informar | NO |   
 | idActuacio | Identificador de l'actuació  | NO |   
 | dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
