@@ -43,7 +43,7 @@ Els endpoints de les consultes han d'estar publicats a la mateixa url base, per 
 - URL de consulta d'expedients > https://serveis.ajuntament.cat/hub/consultaExpedients
 
 Per a la sortida a producció, cal securitzar els endpoints exposats a través de comunicacions via HTTPS.
-Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a producció.
+Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
 El model de desenvolupament es concretarà en fases i podria variar durant el temps:
 
