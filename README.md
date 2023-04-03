@@ -134,6 +134,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | urlActuacio            | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'actuació farà clic en aquest enllaç | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | NO |
 | numeroRegistre           | Número de registre en format string | NO |  
+|dataRegistre | Data del registre en cas de ser diferent de la dataActuació, per acotar els terminis. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |
 | viaPresentacio         | Via de presentació | NO |  
 | canalPreferentNotificacio         | Canal preferent | NO (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
 | observacionsActuacio   | Observacions sobre l'expedient que l'Ens vulgui informar | NO |  
