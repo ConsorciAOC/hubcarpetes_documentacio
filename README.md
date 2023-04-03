@@ -42,7 +42,8 @@ Els endpoints de les consultes han d'estar publicats a la mateixa url base, per 
 - URL de consulta d'actuacions > https://serveis.ajuntament.cat/hub/consultaActuacions
 - URL de consulta d'expedients > https://serveis.ajuntament.cat/hub/consultaExpedients
 
-Per a la sortida a producció, cal securitzar els endpoints exposats a través de comunicacions via HTTPS.
+Per a la sortida a producció, cal securitzar els endpoints exposats a través de comunicacions via HTTPS. Les peticions del HCC arribaran a través d'una d'aquestes dues ips: `157.97.64.126` i `157.97.65.88`.
+
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
 El model de desenvolupament es concretarà en fases i podria variar durant el temps:
