@@ -33,6 +33,8 @@ Per a validar els endpoints a preproducció cal:
 
 Per assegurar la qualitat de les proves a preproducció, és necessari que tant els assentaments registrals o actuacions com els expedients siguin els més reals possibles, però sense contenir dades personals.
 
+Si us plau, per a les proves cal fer servir les dades reals identificatives de les entitats. **Les dades de la respostes a preproducció han de ser remeses com una de les entitats reals en proves que esteu integrant**. Per tant, ens calen dades consistents entre NIF, DIR3 i INE10. Si us és impossible respondre segons aquest criteri, contacteu amb nosaltres per pautar-vos un conjunt de dades de proves.
+
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament a preproducció.
 
 ### B. Producció
