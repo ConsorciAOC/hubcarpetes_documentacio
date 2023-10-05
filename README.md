@@ -12,7 +12,8 @@ Per integrar-se al servei, els passos a fer són els següents:
 2. Omplir el formulari de contacte del portal de Suport: https://suport-integradors.aoc.cat/hc/ca/requests/new indicant a l'assumpte "Integració en proves de El meu espai - Hub de Carpetes Ciutadanes". Afegint al mateix la **URL** de l'endpoints amb exemples de les consultes.
 3. Un cop validades a preproducció les funcionalitats dels endpoints per part de l'AOC, fixar la data de sortida a producció i seguir els passos de B) Producció.
 
-El HCC revisara la integració a l'entorn de proves (preproducció) per poder per validar la correcta integració al servei. Per fer correctament les comprovacions dels vostres endpoints a preproducció, podeu fer servir HTTPS però no afegir cap filtratge d'IP, ni autenticar el certificat client durant aquesta fase.
+El HCC revisara la integració a l'entorn de proves (preproducció) per poder per validar la correcta integració al servei. 
+Per fer correctament les comprovacions dels vostres endpoints a preproducció, podeu fer servir HTTPS/TLS però **es recomana no afegir cap filtratge d'IP**, ni autenticar el certificat client durant aquesta fase. Si tot i així és necessari filtrar per IP, el HCC arribarà a l'entorn de proves amb alguna d'aquestes IP `63.34.38.187`, `34.251.91.75`, `34.254.144.227`
 
 Per a les proves, si us plau **no** fer servir NIFs de persones reals. En concret, cal fer servir:
 |       NIF      | Nom o Raó social | Cognom1 | Cognom2 | Casos d'ús |  
@@ -46,7 +47,7 @@ Els endpoints de les consultes han d'estar publicats a la mateixa url base, per 
 
 Per a la sortida a producció:
 - Cal securitzar els endpoints exposats a través de comunicacions **HTTPS/TLS**. És important que el domini del certificat servidor correpongui al domini exposat al HCC.
-- Si es vol **filtrar les peticions del HCC per IP** aquestes arribaran a través d'una d'aquestes ips: `157.97.64.126`, `157.97.65.88`, `63.34.38.187`, `34.251.91.75`, `34.254.144.227`
+- Si es vol **filtrar les peticions del HCC per IP** aquestes arribaran a través d'una d'aquestes ips: `157.97.64.126`, `157.97.65.88`, `18.200.107.87`, `52.19.83.31`, `99.81.75.214`
 - És recomenabe també establir un canal TLS **validant el certificat client** que presentarà el HCC (Serveis_Administracio_Electronica_AOC.cer)
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
