@@ -44,7 +44,10 @@ Els endpoints de les consultes han d'estar publicats a la mateixa url base, per 
 - URL de consulta d'actuacions > https://serveis.ajuntament.cat/hub/consultaActuacions
 - URL de consulta d'expedients > https://serveis.ajuntament.cat/hub/consultaExpedients
 
-Per a la sortida a producció, cal securitzar els endpoints exposats a través de comunicacions via HTTPS. Les peticions del HCC arribaran a través d'una d'aquestes dues ips: `157.97.64.126` i `157.97.65.88`.
+Per a la sortida a producció:
+- Cal securitzar els endpoints exposats a través de comunicacions **HTTPS/TLS**. És important que el domini del certificat servidor correpongui al domini exposat al HCC.
+- Si es vol **filtrar les peticions del HCC per IP** aquestes arribaran a través d'una d'aquestes ips: `157.97.64.126`, `157.97.65.88`, `63.34.38.187`, `34.251.91.75`, `34.254.144.227`
+- És recomenabe també establir un canal TLS **validant el certificat client** que presentarà el HCC (Serveis_Administracio_Electronica_AOC.cer)
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
@@ -70,16 +73,14 @@ A continuació, es descriuen els atributs i l'estructura JSON dels objectes d'in
 
 Al construir les respostes JSON, cal no informar aquells camps opcionals on no es retorni cap valor o valor buit.
 
-Incorrecte (s'informa el camp _cognomRepresentant_ com una cadena buida de caràcters):
+Incorrecte (s'informa el camp _observacionsActuacio_ com una cadena buida de caràcters):
 ```json
 "actuacions": [
     {
         "idActuacio": "1",
-        "tipusPersona": "INTERESSAT",
-        "nomRepresentant": "Joan",
-        "cognomRepresentant": "",
-        "nomInteressat": "Pere",     
-        
+        "tipusPersona": "INTERESSAT",       
+        "observacionsActuacio": ""        
+        ...
     }
 ```
 
@@ -88,10 +89,7 @@ Correcte:
 "actuacions": [
     {
         "idActuacio": "1",
-        "tipusPersona": "INTERESSAT",
-        "nomRepresentant": "Joan",
-        "nomInteressat": "Pere",
-        
+        "tipusPersona": "INTERESSAT"       
     }
 ```
     
