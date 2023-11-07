@@ -57,6 +57,7 @@ El model de desenvolupament es concretarà en fases i podria variar durant el te
 1. Primera fase de desenvolupament (Prioritzada)
     1. [Consulta d'actuacions](#1-consulta-dactuacions) (Prioritat alta)
     2. [Consulta d'expedients](#2-consulta-dexpedients) (Prioritat mitja)
+    3. [Consulta de cites prèvies](#2-consulta-cites-previes) (Prioritat mitja)
 
 2. Segona fase de desenvolupament (No prioritzada)
     1. Consulta agrupada
@@ -204,6 +205,48 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part de la ciutadania | NO (SI, NO, NO_APLICA) |   
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (defecte false, true)
 
+### Cita Prèvia
+
+#### Exemple JSON
+
+
+```json  
+{
+  "idCita":"345f4kdj4",
+  
+}
+```  
+
+#### Descripcio camps  
+
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| idCita          | Identificador de la cita | SI |    
+| assumpteCita | Assumpte de la cita | SI
+| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC | SI |  
+| codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
+| dataActuacio | Data de l'assentament o actuació. En els casos de Cita Previa serà la data que la persona va fer l'acció de reservar-la. No és una data de registre ni és la data reservada per ser atesa la persona. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |
+| dataCita | Data reservada per la persona o assignada per ser atesa. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |
+| urlCita | URL d'enllaç a la Cita Prèvia | SI |
+| actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part del ciutadà | NO (SI, NO, NO_APLICA) |
+| nomInteressat | Nom de la persona interessada | NO |
+| nomOficinaRegistreDesti | Nom de l'oficina de registre destí | NO |
+| nomOficinaRegistreOrigen | Nom de l'oficina de registre origen | NO |
+| nomRepresentant | Nom de la persona representant | NO |
+| procediment | Identificador o nom del procediment | NO |
+| dataAlerta | Data que servirà per iniciar el període d'alerta, avís, inici de periode voluntari de pagament, inici de termini administratiu, etc... Format ISO_8601 YYYY-MM-DD  | NO |
+| dataRegistre | Data del registre de l'actuació. Format ISO_8601 YYYY-MM-DD | NO |
+| viaPresentacio | Via de presentació. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |
+| urlEdicio | URL d'enllaç a la gestió de la Cita Prèvia | NO |
+| urlCancellacio | URL d'enllaç a la cancel·lació de la Cita Prèvia | NO |
+| puntAtencio | Canal o punt d'atenció que realitzarà o va realitzar l'atenció | NO |
+| adrecaAtencio | Adreça del canal o punt d'atenció que realitzarà o va realitzar l'atenció | NO |
+| telefonAtencio | Telefon del canal o punt d'atenció que realitzarà o va realitzar l'atenció | NO |
+| coordenadesGPS | Coordenades en format GPS de latitud i longitud. En cas de cita prèvia servirà per geolocalitzar el punt físic d'atenció | NO |
+| contacteAtencio | Altres dades de contacte del canal o punt d'atenció que realitzarà o va realitzar l'atenció | NO |
+| URLCoordenadesGPSGoogleMaps | Coordenades en format GPS de latitud i longitud. En cas de cita prèvia servirà per geolocalitzar el punt físic d'atenció. Específic Google Maps | NO |
+| URLcoordenadesGPSCustom | Coordenades en format GPS de latitud i longitud. En cas de cita prèvia servirà per geolocalitzar el punt físic d'atenció. Específic de la solució pròpia | NO |
+
 
 ## Consultes   
 
@@ -243,39 +286,9 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 
 |       Paràmetre      | Descripció | Obligatori |  
 | --- | --- | --- |  
-| codiResultat | Retorna el codi resultant de l'operació | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 404, 500) |   
 | descripcioResultat | Retorna un string de detall de l'operació | SI |
 | actuacions | Array de resposta de les actuacions | SI |
-
-##### Taula de significats dels codis d'error
-
-| Codi | Significat |
-| --- | --- |
-| 200 | OK. |
-| 301 | L'URI del recurs sol·licitat ha estat canviat. Una nova URI serà rebuda a la resposta. |
-| 302 | El recurs de la URI sol·licitada ha estat canviat temporalment. Nous canvis a la URI seran agregats en el futur. Per tant, la mateixa URI ha de ser utilitzada pel client en futures sol·licituds. |
-| 400 | Sintaxi invàlida, no s'ha pogut interpretar la sol·licitud. | 
-| 401 | Cal autenticació. Aquesta és similar a 403, però en aquest cas l'autenticació és possible. | 
-| 403 | No té els permisos necessaris per a cert contingut, per la qual cosa el servidor rebutja atorgar una resposta apropiada. | 
-| 404 | No s'ha pogut trobar el contingut sol·licitat. | 
-| 500 | El servidor ha trobat una situació que no sap com gestionar-la. | 
-| 504 | Timeout. No es pot obtenir una resposta a temps. | 
-| 509 | Límit d'ample de banda excedit. | 
-
-##### Taula de descriptors dels codis d'error
-
-| Codi | Descriptors |
-| --- | --- | 
-| 200 | OK | 
-| 301 | Nova URI: https://github.com/ConsorciAOC/HubCarpetes/edit/main/README.js (aquest és un exemple, caldria retornar la URI)| 
-| 302 | El recurs de la URI sol·licitada ha estat canviat temporalment | 
-| 400 | Sintaxi invàlida, no s'ha pogut interpretar la sol·licitud | 
-| 401 | Cal autenticació | 
-| 403 | No té els permisos necessaris | 
-| 404 | No s'ha trobat cap informació | 
-| 500 | El servidor ha trobat una situació que no sap com gestionar-la | 
-| 504 | Temps d'espera excedit | 
-| 509 | Ample de banda excedit | 
 
 Per exemple, la possibilitat de no trobar cap actuació per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
 
@@ -359,7 +372,7 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 
 |   Paràmetre  |  Descripció  |  Obligatori  |   
 | --- | --- | --- |   
-| codiResultat | Retorna el codi resultant de l'operació | SI (200, 301, 302, 400, 401, 403 ,404, 500, 504, 509) |   
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 404, 500) |   
 | descripcioResultat | Retorna un string de detall de l'operació | SI |
 | expedients | Array de resposta dels expedients | SI |
 
@@ -423,7 +436,78 @@ En aquest exemple, la resposta conté dos expedients: un sobre una llicència d'
     }
    ]
 }  
-```  
+```
+
+#### 3. Consulta de cites previes
+
+Retorna el detall de cites previes en haver-se informat un documentIdentificatiu a la petició.  
+
+##### Peticio
+
+`GET /consultaCitesPrevies?{documentIdentificatiu,tipusDocumentIdentificatiu,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
+
+##### Descripcio camps   
+
+|   Paràmetre  | Descripció | Obligatori  |   
+| --- | --- | --- |   
+| documentIdentificatiu | Document identificatiu de la persona | SI |   
+| tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
+| codiINE10 | Codi INE10 | NO |   
+| codiDIR3Organisme | Codi DIR3 | NO |   
+| dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
+| dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
+
+##### Exemple peticio  
+
+`GET /consultaCitesPrevies?documentIdentificatiu=99999018D&tipusDocumentIdentificatiu=NIF`
+
+
+##### Descripcio camps resposta   
+
+|       Paràmetre      | Descripció | Obligatori |  
+| --- | --- | --- |  
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 404, 500) |   
+| descripcioResultat | Retorna un string de detall de l'operació | SI |
+| actuacions | Array de resposta de les actuacions | SI |
+
+
+Per exemple, la possibilitat de no trobar cap actuació per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
+
+```json  
+{
+"codiResultat":"404",
+"descripcioResultat":"No s'ha trobat cap informació"
+}
+``` 
+
+##### Exemple resposta
+
+En aquest exemple, la resposta conté dues cites.
+
+```json  
+{
+   "codiResultat":"200",
+   "descripcioResultat":"OK",
+   "citesprevies":[
+      {       
+       "idCita":"2015-E-123"      
+     },
+     {      
+       "idCita":"2015-E-124"     
+     }
+    ]
+ }
+```
+
+### Taula de significats dels codis d'error
+
+| Codi | Significat |
+| --- | --- |
+| 200 | Petició provessada correctament, es retornen resultats |
+| 404 | No s'ha pogut trobar el contingut sol·licitat. | 
+| 500 | El servidor ha trobat una situació que no sap com gestionar-la | 
+
+
 ### Fase 2
 
 Donada la naturalesa de la metodologia àgil escollida pel desenvolupament del projecte, la fase 2 és troba pendent de definició.
