@@ -18,19 +18,19 @@ Per fer correctament les comprovacions dels vostres endpoints a preproducció, p
 Per a les proves, si us plau **no** fer servir NIFs de persones reals. En concret, cal fer servir:
 |       NIF      | Nom o Raó social | Cognom1 | Cognom2 | Casos d'ús |  
 | ---------------| --- | --- | --- | --- |
-| 99999972C | Ciutadania | Fictícia | PF | Persona física |
-| 99999974E | Ciutadania | Fictícia | PFRPJ | Persona física representant de persona jurídica |
-| A01111114 | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 99999974E |
+| 00000000T | Ciutadania | Fictícia | PF | Persona física |
+| 00000000T | Ciutadania | Fictícia | PFRPJ | Persona física representant de persona jurídica |
+| Q0000000J | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 99999974E |
 
 Per a validar els endpoints a preproducció cal:
 
 **consultaActuacions**
-- 3 o més actuacions del NIF 99999972C.
-- 3 o més actuacions del NIF 99999974E (representant de la persona jurídica A01111114).
+- 3 o més actuacions del NIF 00000000T.
+- 3 o més actuacions del NIF 00000000T (representant de la persona jurídica Q0000000J).
 
 **consultaExpedients**
-- 2 o més expedients del NIF 99999972C.
-- 2 o més expedients del NIF 99999974E (representant de la persona jurídica A01111114).
+- 2 o més expedients del NIF 00000000T.
+- 2 o més expedients del NIF 00000000T (representant de la persona jurídica Q0000000J).
 
 Per assegurar la qualitat de les proves a preproducció, és necessari que tant els assentaments registrals o actuacions com els expedients siguin els més reals possibles, però sense contenir dades personals.
 
