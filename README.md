@@ -116,7 +116,8 @@ El model s'ha dividit en blocs d'informació integrats en la resposta: Identific
   "canalPreferentNotificacio":"COMPAREIXENCA_ELECTRONICA",
   "observacionsActuacio":"Duplicat padró",
   "idExpedient":"EXP-ID-1",
-  "fue":"false"
+  "fue":"false",
+  "estatNotificacio":"DIPOSITADA"
 }
 ```  
 
@@ -145,6 +146,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | procediment            | Procediment | NO |  
 | referenciaExterna      | Referencia externa | NO |
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (defecte false, true)
+| estatNotificacio | Estat de l'actuació, determinada pel llistat. Dipositada és l'estat quan un registre de sortida ha estat disposat a la persona destinatària. Acceptada és quan aquesta ha estat practicada mitjaçant la seva acceptació. Rebutjada és quan ha estat practicada per haver-se rebutjat o bé ha expirat el termini. Aplica parcial o totalment a les comunicacions i les notificacions, segons cada cas.  | NO (DIPOSITADA, ACCEPTADA, REBUTJADA)
 
 ### Expedient  
 
