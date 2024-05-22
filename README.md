@@ -20,7 +20,7 @@ Per a les proves, si us plau **no** fer servir NIFs de persones reals. En concre
 | ---------------| --- | --- | --- | --- |
 | 00000000T | Ciutadania | Fictícia | PF | Persona física |
 | 00000000T | Ciutadania | Fictícia | PFRPJ | Persona física representant de persona jurídica |
-| Q0000000J | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 99999974E |
+| Q0000000J | PJurídica Ficticia PJ |  |  | Persona jurídica representada per 00000000T |
 
 Per a validar els endpoints a preproducció cal:
 
