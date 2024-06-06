@@ -52,19 +52,12 @@ Per a la sortida a producció:
 
 Un cop l'AOC tingui la informació necessària per consultar les dades, validarà que la integració funcioni correctament.
 
-El model de desenvolupament es concretarà en fases i podria variar durant el temps:
 
-1. Primera fase de desenvolupament (Prioritzada)
-    1. [Consulta d'actuacions](#1-consulta-dactuacions) (Prioritat alta)
-    2. [Consulta d'expedients](#2-consulta-dexpedients) (Prioritat mitja)
-    3. [Consulta de cites prèvies](#2-consulta-cites-previes) (Prioritat mitja)
-
-2. Segona fase de desenvolupament (No prioritzada)
-    1. Consulta agrupada
-    2. Consulta detallada d'una actuació
-    3. Consulta detallada d'un expedient
-
-    Aquesta segona fase està pendent de ser concretada i es troba en estat d'esborrany.
+Consultes d'informació disponibles:
+1. Consulta d'actuacions
+2. Consulta d'expedients
+3. Consulta de cites prèvies
+4. Consulta de tributs
 
 
 _Aquest document està en fase d'esborrany i pot patir canvis._
@@ -248,6 +241,57 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | contacteAtencio | Altres dades de contacte del canal o punt d'atenció que realitzarà o va realitzar l'atenció | NO |
 | URLCoordenadesGPSGoogleMaps | Coordenades en format GPS de latitud i longitud. En cas de cita prèvia servirà per geolocalitzar el punt físic d'atenció. Específic Google Maps | NO |
 | URLcoordenadesGPSCustom | Coordenades en format GPS de latitud i longitud. En cas de cita prèvia servirà per geolocalitzar el punt físic d'atenció. Específic de la solució pròpia | NO |
+
+
+### Tribut
+
+#### Exemple JSON
+
+
+```json  
+{
+  "idDeute":"20240105",
+  
+}
+```  
+
+#### Descripcio camps  
+
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| idTribut          | Identificador del tribut | NO |    
+| exercici | Any en format YYYY | NO |
+| dataTribut              | Data tribut | NO |  
+| codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
+| codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
+| descripcioTribut | Descripció tribut | NO |
+| descripcioObjecteTributari | Descripció objecte tributari | NO |
+| importTotal | Import total del tribut | NO |
+| observacions | Observacions | NO |
+| idExpedient | Identificador de l'expedient | NO |
+| fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (true, false)
+| estatDomiciliacio | Estat de la domiciliació | NO |
+| deutes | Llista d'objectes de tipus Deute | NO |
+
+### Deute
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| idDeute          | Identificador del deute | NO |    
+| situacio          | Situació | NO |    
+| importDeute          | Import total | NO |    
+| importPendent          | Import pendent  | NO |    
+| descripcio          | Descripció | NO |    
+| dataIniciPagament          | Data inici del pagament | NO |    
+| dataFiPagament          | Data fi del pagament | NO |    
+| estatPagament          | Estat del pagament | NO (PENDENT) |    
+| accions          | Llista d'objectes de tipus Accio | NO |    
+
+### Accio
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| descripcio          | Descripció de l'acció | NO |    
+| url          | Enllaç per realitzar una acció sobre el tribut| NO |    
+| tipus          | Tipus d'acció | NO (DEUTE, OBJECTE, CLIENT, IDENTIFICADOR) |    
 
 
 ## Consultes   
@@ -496,6 +540,67 @@ En aquest exemple, la resposta conté dues cites.
      },
      {      
        "idCita":"2015-E-124"     
+     }
+    ]
+ }
+```
+
+#### 3. Consulta de tributs
+
+Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu a la petició.  
+
+##### Peticio
+
+`GET /consultaTributs?{documentIdentificatiu,tipusDocumentIdentificatiu,codiINE10,codiDIR3Organisme,dataInici,dataFi}`  
+
+##### Descripcio camps   
+
+|   Paràmetre  | Descripció | Obligatori  |   
+| --- | --- | --- |   
+| documentIdentificatiu | Document identificatiu de la persona | SI |   
+| tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
+| codiINE10 | Codi INE10 | NO |   
+| codiDIR3Organisme | Codi DIR3 | NO |   
+| dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
+| dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
+
+##### Exemple peticio  
+
+`GET /consultaTributs?documentIdentificatiu=99999018D&tipusDocumentIdentificatiu=NIF`
+
+
+##### Descripcio camps resposta   
+
+|       Paràmetre      | Descripció | Obligatori |  
+| --- | --- | --- |  
+| codiResultat | Retorna el codi resultant de l'operació | SI (200, 404, 500) |   
+| descripcioResultat | Retorna un string de detall de l'operació | SI |
+| tributs | Array de resposta dels tributs | SI |
+
+
+Per exemple, la possibilitat de no trobar cap tribut per fer el retorn, en base a un document identificatiu, el resultat hauria de ser:
+
+```json  
+{
+"codiResultat":"404",
+"descripcioResultat":"No s'ha trobat cap informació"
+}
+``` 
+
+##### Exemple resposta
+
+En aquest exemple, la resposta conté dos tributs.
+
+```json  
+{
+   "codiResultat":"200",
+   "descripcioResultat":"OK",
+   "tributs":[
+      {       
+       "idTribut":"2015-E-123"      
+     },
+     {      
+       "idTribut":"2015-E-124"     
      }
     ]
  }
