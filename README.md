@@ -283,7 +283,8 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | descripcio          | Descripció | NO |    
 | dataIniciPagament          | Data inici del pagament | NO |    
 | dataFiPagament          | Data fi del pagament | NO |    
-| estatPagament          | Estat del pagament | NO (PAGAT, PENDENT) |    
+| estatPagament          | Estat del pagament | NO (PAGAT, PENDENT) | 
+| domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions          | Llista d'objectes de tipus Accio | NO |    
 
 ### Accio
