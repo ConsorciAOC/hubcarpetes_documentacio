@@ -135,6 +135,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | canalPreferentNotificacio         | Canal preferent | NO (DIRECCIO_POSTAL, COMPAREIXENCA_ELECTRONICA, DIRECCIO_ELECTRONICA_HABILITADA) |  
 | observacionsActuacio   | Observacions sobre l'expedient que l'Ens vulgui informar | NO |  
 | idExpedient        | Número de l'expedient | NO |  
+| idExpedients        | Llista d'identificadors d'expedients vinculats | NO |  
 | urlExpedient            | URL de la carpeta ciutadana de l'Ens. Quan el ciutadà vulgui consultar el detall de l'expedient farà clic en aquest enllaç | NO |
 | procediment            | Procediment | NO |  
 | referenciaExterna      | Referencia externa | NO |
@@ -195,6 +196,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | estatExpedient | Estat | SI (OBERT,TANCAT) |   
 | observacionsExpedient | Observacions sobre l'expedient que l'Ens vulgui informar | NO |   
 | idActuacio | Identificador de l'actuació  | NO |   
+| idActuacions        | Llista d'identificadors d'actuacions vinculades | NO | 
 | dataActuacio | Data i hora del número de registre d'entrada o sortida que ha donat origen a l'expedient. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |   
 | numeroRegistre | Número de registre que ha donat origen a l'expedient | NO |  
 | actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part de la ciutadania | NO (SI, NO, NO_APLICA) |   
