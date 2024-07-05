@@ -272,7 +272,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | observacions | Observacions | NO |
 | idExpedient | Identificador de l'expedient | NO |
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (true, false)
-| estatDomiciliacio | Estat de la domiciliació | NO |
+| estatDomiciliacio | Estat de la domiciliació | NO (DOMICILIAT, NO_DOMICILIAT) |
 | deutes | Llista d'objectes de tipus Deute | NO |
 
 ### Deute
