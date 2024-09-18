@@ -367,7 +367,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | situacio          | Situació | NO |    
 | periode | Detalla el període en el que es troba el deute i pot tenir els valors següents | NO (EXECUTIVA, VOLUNTARIA)
 | alerta | Text que permet destacar una alerta a la ciutadania sobre algun aspecte rellevant que cal cridar l’atenció. Per exemple: “La domiciliació ha estat retornada. Si us plau, per evitar recàrrecs realitzi el pagament accedint a l'enllaç” | NO |
-| modalitatPagament | Detalla la modalitat actual del pagament del deute | NO (CARTA_DE_PAGAMENT, DOMICILIAT, PLA_PERSONALITZAT)
+| modalitatPagamentDeute | Detalla la modalitat actual del pagament del deute | NO (CARTA_DE_PAGAMENT, DOMICILIAT, PLA_PERSONALITZAT)
 | importDeute          | Import total | NO |    
 | importPendent          | Import pendent  | NO |    
 | descripcio          | Descripció | NO |    
