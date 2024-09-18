@@ -332,8 +332,8 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
       "importDeute": "1000.00",
       "importPendent": "500.00",
       "descripcio": "Impost sobre Béns Immobles",
-      "dataIniciPagament": "2023-01-01T00:00:00",
-      "dataFiPagament": "2023-12-31T23:59:59",
+      "dataIniciPagament": "2023-01-01",
+      "dataFiPagament": "2023-12-31",
       "estatPagament": "PAGAMENT_PARCIAL",
       "accions": [
         {
@@ -371,8 +371,8 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | importDeute          | Import total | NO |    
 | importPendent          | Import pendent  | NO |    
 | descripcio          | Descripció | NO |    
-| dataIniciPagament          | Data inici del pagament | NO |    
-| dataFiPagament          | Data fi del pagament | NO |    
+| dataIniciPagament          | Data inici del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
+| dataFiPagament          | Data fi del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
 | estatPagament          | Estat del pagament | NO (PAGAT, PENDENT) | 
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
