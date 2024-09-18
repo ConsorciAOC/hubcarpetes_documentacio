@@ -32,6 +32,12 @@ Per a validar els endpoints a preproducció cal:
 - 2 o més expedients del NIF 00000000T.
 - 2 o més expedients del NIF 00000000T (representant de la persona jurídica Q0000000J).
 
+**consultaTributs**
+- 2 o més objectes tributaris del NIF 00000000T que incloguin deutes de diferent tipologia: Pendents (en Voluntària), Pendents (en Executiva), Pagats.
+- 2 o més objectes tributaris del NIF 00000000T (representant de la persona jurídica Q0000000J) que incloguin deutes de diferent tipologia: Pendents (en Voluntària), Pendents (en Executiva), Pagats.
+
+ 
+
 Per assegurar la qualitat de les proves a preproducció, és necessari que tant els assentaments registrals o actuacions com els expedients siguin els més reals possibles, però sense contenir dades personals.
 
 Si us plau, per a les proves cal fer servir les dades reals identificatives de les entitats. **Les dades de la respostes a preproducció han de ser remeses com una de les entitats reals en proves que esteu integrant**. Per tant, ens calen dades consistents entre NIF, DIR3 i INE10. Si us és impossible respondre segons aquest criteri, contacteu amb nosaltres per pautar-vos un conjunt de dades de proves.
@@ -123,7 +129,7 @@ Els paràmetres segueixen una estructura determinada pel nom del mateix en minú
 | ----------------------| --- | --- |  
 | idActuacio          | Identificador de l'actuació | SI |  
 | tipusPersona           | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
-| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub de Carpetes ciutadanes de MyGov | SI |  
+| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | SI |  
 | tipusActuacio          | Tipus d'actuació | SI (ENTRADA, SORTIDA)|  
 | dataActuacio           | Data de l'actuació. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |  
 | assumpteActuacio               | Assumpte | SI |  
@@ -182,7 +188,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | --- | --- | --- |   
 | idExpedient | Identificador de l'expedient | SI |  
 | tipusPersona  | Tipus de persona | SI (INTERESSAT, REPRESENTANT) |  
-| codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el hub MyGov | SI|
+| codiINE10 | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | SI|
 | procediment | Procediment |  SI |   
 | dataIniciExpedient | Data inici. Format ISO_8601 YYYY-MM-DDThh:mm:ss| SI |   
 | assumpteExpedient | Assumpte |  SI  |   
@@ -220,7 +226,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | ----------------------| --- | --- |  
 | idCita          | Identificador de la cita | SI |    
 | assumpteCita | Assumpte de la cita | SI
-| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC | SI |  
+| codiINE10              | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | SI |  
 | codiDIR3Organisme      | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
 | dataActuacio | Data de l'assentament o actuació. En els casos de Cita Previa serà la data que la persona va fer l'acció de reservar-la. No és una data de registre ni és la data reservada per ser atesa la persona. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |
 | dataCita | Data reservada per la persona o assignada per ser atesa. Format ISO_8601 YYYY-MM-DDThh:mm:ss | SI |
@@ -246,7 +252,9 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 
 
 ### Tribut
-PENDENT DESCRIPCIO TRIBUT
+Aquesta consulta és per integrar l’estat d’una persona en relació als seus tributs, multes i altres deutes relacionats amb la seva persona. S’estructura en dos estratus: l’objecte tributari i el/s deute/s relacionats amb l’OT.
+Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu a la petició. 
+És una resposta estructurada d’objectes tribut que inclouen els deutes relacionats a cadascun d’ells. 
 
 #### Exemple JSON
 ```json  
@@ -299,7 +307,7 @@ PENDENT DESCRIPCIO TRIBUT
 | idTribut          | Identificador del tribut | NO |    
 | exercici | Any en format YYYY | NO |
 | dataTribut              | Data tribut | NO |  
-| codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
+| codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | NO |
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
 | descripcioTribut | Descripció tribut | NO |
 | descripcioObjecteTributari | Descripció objecte tributari | NO |
@@ -308,6 +316,9 @@ PENDENT DESCRIPCIO TRIBUT
 | idExpedient | Identificador de l'expedient | NO |
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (true, false)
 | estatDomiciliacio | Estat de la domiciliació | NO (DOMICILIAT, NO_DOMICILIAT) |
+| idGrupTribut| Id que aglutina diferents tributs en un element superior. Serveix per vincular tributs amb un objecte tributari que genera aquests. Per exemple: 1999-COT -> una multa + IVTM + Taxa de l’aparcament municipal  | NO |
+| tipusGrupTribut| Tipologia agrupada de l’idTributGrup | NO ( REFERENCIA_CADASTRAL, MATRICULA, IAE, PENDENT_EXPEDIENT_SANCIONADOR, ALTRES) |
+| multa| Informar de la naturalesa específica d’una multa informada a l’estratus del tribut  | NO (true, false) |
 | deutes | Llista d'objectes de tipus Deute | NO |
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
@@ -354,6 +365,9 @@ PENDENT DESCRIPCIO TRIBUT
 | ----------------------| --- | --- |  
 | idDeute          | Identificador del deute | NO |    
 | situacio          | Situació | NO |    
+| periode | Detalla el període en el que es troba el deute i pot tenir els valors següents | NO (EXECUTIVA, VOLUNTARIA)
+| alerta | Text que permet destacar una alerta a la ciutadania sobre algun aspecte rellevant que cal cridar l’atenció. Per exemple: “La domiciliació ha estat retornada. Si us plau, per evitar recàrrecs realitzi el pagament accedint a l'enllaç” | NO |
+| modalitatPagament | Detalla la modalitat actual del pagament del deute | NO (CARTA_DE_PAGAMENT, DOMICILIAT, PLA_PERSONALITZAT)
 | importDeute          | Import total | NO |    
 | importPendent          | Import pendent  | NO |    
 | descripcio          | Descripció | NO |    
@@ -363,7 +377,7 @@ PENDENT DESCRIPCIO TRIBUT
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
-| domiciliat | Paràmetre que indica si el deute està domiciliat | NO (true, false) |
+
 
 
 ### Accio
@@ -443,7 +457,7 @@ Retorna el detall d'actuacions en haver-se informat un documentIdentificatiu a l
 | documentIdentificatiu | Document identificatiu de la persona | SI |   
 | tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
 | tipusPersona | Tipus de rol de la persona en relació a l'actuació | NO (INTERESSAT, REPRESENTANT) |   
-| codiINE10 | Codi INE10 | NO |   
+| codiINE10 | Codi INE10 (10 dígits) | NO |   
 | codiDIR3Organisme | Codi DIR3 | NO |   
 | dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
 | dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
@@ -531,7 +545,7 @@ Retorna el detall d'expedients en haver-se informat un identificador.
 | documentIdentificatiu | SI |   
 | tipusDocumentIdentificatiu | SI (NIF,NIE,PASSAPORT) |   
 | tipusPersona | NO (INTERESSAT, REPRESENTANT) |   
-| codiINE10 | NO |   
+| codiINE10  | NO |   
 | codiDIR3Organisme | NO |   
 | dataInici | NO (Format ISO_8601 YYYY-MM-DD) |   
 | dataFi | NO (Format ISO_8601 YYYY-MM-DD) |   
@@ -626,7 +640,7 @@ Retorna el detall de cites previes en haver-se informat un documentIdentificatiu
 | --- | --- | --- |   
 | documentIdentificatiu | Document identificatiu de la persona | SI |   
 | tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
-| codiINE10 | Codi INE10 | NO |   
+| codiINE10 (10 dígits) | Codi INE10 | NO |   
 | codiDIR3Organisme | Codi DIR3 | NO |   
 | dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
 | dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
@@ -687,7 +701,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | --- | --- | --- |   
 | documentIdentificatiu | Document identificatiu de la persona | SI |   
 | tipusDocumentIdentificatiu | Tipus de document identificatiu | SI (NIF,NIE,PASSAPORT) |
-| codiINE10 | Codi INE10 | NO |   
+| codiINE10 | Codi INE10 (10 dígits) | NO |   
 | codiDIR3Organisme | Codi DIR3 | NO |   
 | dataInici | Data d'inici de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
 | dataFi | Data de fi de la informació consultada | NO (Format ISO_8601 YYYY-MM-DD) |   
