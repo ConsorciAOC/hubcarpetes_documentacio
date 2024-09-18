@@ -375,7 +375,7 @@ Objecte per descriure el detall de cada acció associada a tributs o deutes.
 {
   "descripcio" : "Pagament del tribut",
   "url" : "http://test.es/1234",
-  "tipus": DEUTE  
+  "tipus": "DEUTE"  
 }
 ```  
 
