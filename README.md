@@ -365,13 +365,6 @@ PENDENT DESCRIPCIO TRIBUT
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
 | domiciliat | Paràmetre que indica si el deute està domiciliat | NO (true, false) |
 
-### Accio
-|       Paràmetre      | Descripció | Obligatori |  
-| ----------------------| --- | --- |  
-| descripcio          | Descripció de l'acció | NO |    
-| url          | Enllaç per realitzar una acció sobre el tribut| NO |    
-| tipus          | Tipus d'acció | NO (DEUTE, OBJECTE, CLIENT, IDENTIFICADOR) |    
-
 
 ### Accio
 Objecte per descriure el detall de cada acció associada a tributs o deutes.
