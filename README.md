@@ -246,15 +246,50 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 
 
 ### Tribut
+PENDENT DESCRIPCIO TRIBUT
 
 #### Exemple JSON
-
-
 ```json  
-{
-  "idDeute":"20240105",
-  
-}
+ {
+      "idTribut": "T123456",
+      "exercici": "2023",
+      "dataTribut": "2023-01-01T00:00:00",
+      "codiDIR3Organisme": "A00000000",
+      "codiINE10": "0123456789",
+      "descripcioTribut": "Impost sobre Béns Immobles",
+      "descripcioObjecteTributari": "Habitatge unifamiliar",
+      "importTotal": "500.00",
+      "observacions": "Pagament fraccionat disponible",
+      "idExpedient": "E987654",
+      "fue": false,
+      "estatDomiciliacio": "NO_DOMICILIAT",
+      "deutes": [
+        {
+          "idDeute": "D001",
+          "importDeute": "250.00",
+          "dataFiPagament": "2023-06-30T23:59:59Z"
+        },
+        {
+          "idDeute": "D002",
+          "importDeute": "250.00",
+          "dataFiPagament": "2023-12-31T23:59:59Z"
+        }
+      ],
+      "accions": [
+        {
+          "descripcio": "Pagar",
+          "url": "https://example.com/pagar/T123456"
+        }
+      ],
+      "adjunts": [
+        {
+          "idAdjunt": "A001",
+          "nom": "Rebut_IBI_2023.pdf",
+          "tipus": "application/pdf",
+          "url": "https://example.com/documents/Rebut_IBI_2023.pdf"
+        }
+      ]
+    }
 ```  
 
 #### Descripcio camps  
@@ -302,6 +337,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 
 
 ### Accio
+Objecte per descriure el detall de cada acció associada a tributs o deutes.
 
 #### Exemple JSON
 
@@ -323,6 +359,8 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 
 
 ### Adjunt
+
+Objecte per descriure les metadades dels documents adjunts.
 
 #### Exemple JSON
 
