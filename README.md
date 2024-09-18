@@ -313,6 +313,43 @@ PENDENT DESCRIPCIO TRIBUT
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
 
 ### Deute
+### Exemple json
+```json
+{
+      "idDeute": "DEUTE123",
+      "situacio": "PENDENT",
+      "importDeute": "1000.00",
+      "importPendent": "500.00",
+      "descripcio": "Impost sobre Béns Immobles",
+      "dataIniciPagament": "2023-01-01T00:00:00",
+      "dataFiPagament": "2023-12-31T23:59:59",
+      "estatPagament": "PAGAMENT_PARCIAL",
+      "accions": [
+        {
+          "descripcio": "Pagar",
+          "url": "https://example.com/pagar",
+          "tipus": "PAGAMENT"
+        }
+      ],
+      "adjunts": [
+        {
+          "idAdjunt": "ADJ001",
+          "url": "https://example.com/rebut.pdf",
+          "nom": "Rebut.pdf",
+          "descripcio": "Rebut del deute",
+          "tipus": "application/pdf",
+          "csv": "CSV123456",
+          "urlCsv": "https://example.com/csv",
+          "mida": "1024",
+          "dataCreacio": "2023-01-01T12:00:00"
+        }
+      ],
+      "domiciliat": false
+    }
+```
+
+#### Descripció camps
+
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
 | idDeute          | Identificador del deute | NO |    
@@ -326,7 +363,7 @@ PENDENT DESCRIPCIO TRIBUT
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
-| domiciliat | Paràmetre que indica si el deute està domiciliat | NO |
+| domiciliat | Paràmetre que indica si el deute està domiciliat | NO (true, false) |
 
 ### Accio
 |       Paràmetre      | Descripció | Obligatori |  
@@ -355,11 +392,10 @@ Objecte per descriure el detall de cada acció associada a tributs o deutes.
 | ----------------------| --- | --- |  
 | url          | URL de l'acció | NO |  
 | descripcio  | Descripció | NO |  
-| tipus      | Tipus d'acció (DEUTE, TRIBUT, ORGANISME, IDENTIFICADOR) | NO |
+| tipus      | Tipus d'acció | NO (DEUTE, TRIBUT, ORGANISME, IDENTIFICADOR) |
 
 
 ### Adjunt
-
 Objecte per descriure les metadades dels documents adjunts.
 
 #### Exemple JSON
