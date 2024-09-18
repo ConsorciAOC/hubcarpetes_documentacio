@@ -274,6 +274,8 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (true, false)
 | estatDomiciliacio | Estat de la domiciliació | NO (DOMICILIAT, NO_DOMICILIAT) |
 | deutes | Llista d'objectes de tipus Deute | NO |
+| accions | Llista d'objectes de tipus Accio | NO |
+| adjunts | Llista d'objectes de tipus Adjunt | NO |
 
 ### Deute
 |       Paràmetre      | Descripció | Obligatori |  
@@ -287,7 +289,9 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | dataFiPagament          | Data fi del pagament | NO |    
 | estatPagament          | Estat del pagament | NO (PAGAT, PENDENT) | 
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
-| accions          | Llista d'objectes de tipus Accio | NO |    
+| accions | Llista d'objectes de tipus Accio | NO |
+| adjunts | Llista d'objectes de tipus Adjunt | NO |
+| domiciliat | Paràmetre que indica si el deute està domiciliat | NO |
 
 ### Accio
 |       Paràmetre      | Descripció | Obligatori |  
@@ -295,6 +299,60 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | descripcio          | Descripció de l'acció | NO |    
 | url          | Enllaç per realitzar una acció sobre el tribut| NO |    
 | tipus          | Tipus d'acció | NO (DEUTE, OBJECTE, CLIENT, IDENTIFICADOR) |    
+
+
+### Accio
+
+#### Exemple JSON
+
+```json  
+{
+  "descripcio" : "Pagament del tribut",
+  "url" : "http://test.es/1234",
+  "tipus": DEUTE  
+}
+```  
+
+#### Descripcio camps  
+
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| url          | URL de l'acció | NO |  
+| descripcio  | Descripció | NO |  
+| tipus      | Tipus d'acció (DEUTE, TRIBUT, ORGANISME, IDENTIFICADOR) | NO |
+
+
+### Adjunt
+
+#### Exemple JSON
+
+```json  
+  {
+      "idAdjunt": "ADJ001",
+      "url": "https://example.com/documents/ADJ001.pdf",
+      "nom": "Factura_2023.pdf",
+      "descripcio": "Factura del tribut per l'any 2023",
+      "tipus": "application/pdf",
+      "csv": "CSV123456789",
+      "urlCsv": "https://example.com/csv/CSV123456789",
+      "mida": "1024",
+      "dataCreacio": "2023-05-15T10:30:00"
+    } 
+```  
+
+#### Descripcio camps  
+
+|       Paràmetre      | Descripció | Obligatori |  
+| ----------------------| --- | --- |  
+| idAdjunt   | Identificador de l'adjunt | NO |  
+| url  | La URL de descàrrega. Pot ser una URL via acarador, en aquest cas haurà de no ser necessari introduïr el CSV del document (podria aplicar mesures de limitamició de descàrrega demanant informació o identificació). | NO |  
+| nom  | Nom del document | NO |
+| descripcio      | Descripció del document  | NO |
+| tipus      | Tipus del document. Cal usar MIME types (p. ex. application/pdf, text/plain...) | NO |
+| csv     | Codi de CSV | NO |
+| urlCsv      | URL de l'acarador per insertar el CSV de l'adjunt | NO |
+| mida      | Tamany en KB del document | NO |
+| dataCreacio | Data de creació del document. Format ISO_8601 YYYY-MM-DDThh:mm:ss | NO |
 
 
 ## Consultes   
