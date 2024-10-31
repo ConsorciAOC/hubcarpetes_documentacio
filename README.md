@@ -411,6 +411,7 @@ Objecte per descriure les metadades dels documents adjunts.
 ```json  
   {
       "idAdjunt": "ADJ001",
+      "uuidDesal": "8c89e31c-e2a6-499c-876d-78672e8e4c31"
       "url": "https://example.com/documents/ADJ001.pdf",
       "nom": "Factura_2023.pdf",
       "descripcio": "Factura del tribut per l'any 2023",
@@ -427,6 +428,7 @@ Objecte per descriure les metadades dels documents adjunts.
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
 | idAdjunt   | Identificador de l'adjunt | NO |  
+| uuidDesal | Identificador únic de DESAL | NO |
 | url  | La URL de descàrrega. Pot ser una URL via acarador, en aquest cas haurà de no ser necessari introduïr el CSV del document (podria aplicar mesures de limitamició de descàrrega demanant informació o identificació). | NO |  
 | nom  | Nom del document | NO |
 | descripcio      | Descripció del document  | NO |
