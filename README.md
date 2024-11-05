@@ -365,7 +365,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
 | idDeute          | Identificador del deute | NO |    
-| situacio          | Situació | NO |    
+| situacio          | Situació del deute | NO (PENDENT, PAGAT, BAIXA) |    
 | periode | Detalla el període en el que es troba el deute i pot tenir els valors següents | NO (EXECUTIVA, VOLUNTARIA)
 | alerta | Text que permet destacar una alerta a la ciutadania sobre algun aspecte rellevant que cal cridar l’atenció. Per exemple: “La domiciliació ha estat retornada. Si us plau, per evitar recàrrecs realitzi el pagament accedint a l'enllaç” | NO |
 | modalitatPagamentDeute | Detalla la modalitat actual del pagament del deute | NO (CARTA_DE_PAGAMENT, DOMICILIAT, PLA_PERSONALITZAT)
@@ -378,7 +378,6 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
-
 
 
 ### Accio
