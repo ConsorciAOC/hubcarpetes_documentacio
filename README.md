@@ -751,7 +751,7 @@ En aquest exemple, la resposta conté dos tributs.
  }
 ```
 
-### Taula de significats dels codis d'error
+### Taula de significats dels codis
 
 | Codi | Significat |
 | --- | --- |
