@@ -334,8 +334,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
       "importPendent": "500.00",
       "descripcio": "Impost sobre Béns Immobles",
       "dataIniciPagament": "2023-01-01",
-      "dataFiPagament": "2023-12-31",
-      "estatPagament": "PAGAMENT_PARCIAL",
+      "dataFiPagament": "2023-12-31",     
       "accions": [
         {
           "descripcio": "Pagar",
@@ -374,7 +373,6 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | descripcio          | Descripció | NO |    
 | dataIniciPagament          | Data inici del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
 | dataFiPagament          | Data fi del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
-| estatPagament          | Estat del pagament | NO (PAGAT, PENDENT) | 
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
@@ -756,8 +754,7 @@ En aquest exemple, la resposta conté dos tributs.
                     "importDeute": "8385.84",
                     "importPendent": "3395.36",
                     "descripcio": "IMPOST INCREMENT VALOR DELS TERRENYS DE NATURALESA URBANA. Fraccionat o ajornat",
-                    "dataFiPagament": "2021-06-28",
-                    "estatPagament": "PENDENT",
+                    "dataFiPagament": "2021-06-28",                   
                     "adjuntsDTO": [
                         {
                             "idAdjunt": "ADJ001",
