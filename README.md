@@ -318,7 +318,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (true, false)
 | estatDomiciliacio | Estat de la domiciliació | NO (DOMICILIAT, NO_DOMICILIAT) |
 | idGrupTribut| Id que aglutina diferents tributs en un element superior. Serveix per vincular tributs amb un objecte tributari que genera aquests. Per exemple: 1999-COT -> una multa + IVTM + Taxa de l’aparcament municipal  | NO |
-| tipusGrupTribut| Tipologia agrupada de l’idTributGrup | NO ( REFERENCIA_CADASTRAL, MATRICULA, IAE, PENDENT_EXPEDIENT_SANCIONADOR, ALTRES) |
+| tipusGrupTribut| Tipologia agrupada de l’idTributGrup | NO ( REFERENCIA_CADASTRAL, MATRICULA, IAE, EXPEDIENT_SANCIONADOR, ALTRES) |
 | multa| Informar de la naturalesa específica d’una multa informada a l’estratus del tribut  | NO (true, false) |
 | deutes | Llista d'objectes de tipus Deute | NO |
 | accions | Llista d'objectes de tipus Accio | NO |
