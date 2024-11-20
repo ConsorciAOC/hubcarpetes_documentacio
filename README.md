@@ -740,12 +740,42 @@ En aquest exemple, la resposta conté dos tributs.
    "codiResultat":"200",
    "descripcioResultat":"OK",
    "tributs":[
-      {       
-       "idTribut":"2015-E-123"      
-     },
-     {      
-       "idTribut":"2015-E-124"     
-     }
+{
+            "idTribut": "2421553-0000253045",
+            "exercici": "2021",
+            "codiINE10": "0824230008",
+            "descripcioTribut": "29102651040001DG1006NUU",
+            "descripcioObjecteTributari": "IMPOST INCREMENT VALOR DELS TERRENYS DE NATURALESA URBANA CM OBAC, DE L'    124",
+            "importTotal": "8385.84",
+            "estatDomiciliacio": "NO_DOMICILIAT",
+            "deutes": [
+                {
+                    "idDeute": "2421553-0000253001",
+                    "situacio": "EXECUTIVA",
+                    "periode": "2023",
+                    "importDeute": "8385.84",
+                    "importPendent": "3395.36",
+                    "descripcio": "IMPOST INCREMENT VALOR DELS TERRENYS DE NATURALESA URBANA. Fraccionat o ajornat",
+                    "dataFiPagament": "2021-06-28",
+                    "estatPagament": "PENDENT",
+                    "adjuntsDTO": [
+                        {
+                            "idAdjunt": "ADJ001",
+                            "uuidDesal": null,
+                            "url": "https://example.com/documents/ADJ001.pdf",
+                            "nom": "Informe_Tecnic.pdf",
+                            "descripcio": "Informe tècnic del projecte",
+                            "tipus": "application/pdf",
+                            "csv": "CSV123456789",
+                            "urlCsv": "https://example.com/csv/CSV123456789",
+                            "mida": "2048 KB",
+                            "dataCreacio": "2023-04-15T12:30:00"
+                        }
+                    ],
+                    "domiciliat": false
+                }
+            ]
+        }
     ]
  }
 ```
