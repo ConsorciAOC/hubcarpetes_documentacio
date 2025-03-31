@@ -262,7 +262,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
  {
       "idTribut": "T123456",
       "exercici": "2023",
-      "dataTribut": "2023-01-01T00:00:00",
+      "dataTribut": "2023-01-01",
       "codiDIR3Organisme": "A00000000",
       "codiINE10": "0123456789",
       "descripcioTribut": "Impost sobre Béns Immobles",
@@ -307,7 +307,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | ----------------------| --- | --- |  
 | idTribut          | Identificador del tribut | NO |    
 | exercici | Any en format YYYY | NO |
-| dataTribut              | Data tribut | NO |  
+| dataTribut | Data del tribut. Format ISO_8601 YYYY-MM-DD | Data tribut | NO |  
 | codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | NO |
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
 | descripcioTribut | Descripció tribut | NO |
