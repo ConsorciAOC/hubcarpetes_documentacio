@@ -276,12 +276,16 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
         {
           "idDeute": "D001",
           "importDeute": "250.00",
-          "dataFiPagament": "2023-06-30T23:59:59Z"
+          "descripcio": "Deute de l'IBI 1",
+          "dataIniciPagament": "2023-03-30",
+          "dataFiPagament": "2023-06-30"
         },
         {
           "idDeute": "D002",
           "importDeute": "250.00",
-          "dataFiPagament": "2023-12-31T23:59:59Z"
+          "descripcio": "Deute de l'IBI 2",
+          "dataIniciPagament": "2023-03-30",
+          "dataFiPagament": "2023-06-30"
         }
       ],
       "accions": [
@@ -305,12 +309,12 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
-| idTribut          | Identificador del tribut | NO |    
-| exercici | Any en format YYYY | NO |
-| dataTribut | Data del tribut. Format ISO_8601 YYYY-MM-DD | Data tribut | NO |  
-| codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | NO |
-| codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | NO |
-| descripcioTribut | Descripció tribut | NO |
+| idTribut          | Identificador del tribut | SI |    
+| exercici | Any en format YYYY | SI |
+| dataTribut | Data del tribut. Format ISO_8601 YYYY-MM-DD | Data tribut | SI |  
+| codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | SI (si no s'ha informat codiDIR3Organisme) |
+| codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | SI (si no s'ha informat codiINE10) |
+| descripcioTribut | Descripció tribut | SI |
 | descripcioObjecteTributari | Descripció objecte tributari | NO |
 | importTotal | Import total del tribut | NO |
 | observacions | Observacions | NO |
@@ -363,20 +367,19 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
-| idDeute          | Identificador del deute | NO |    
-| situacio          | Situació del deute | NO (PENDENT, PAGAT, BAIXA) |    
+| idDeute          | Identificador del deute | SI |    
+| situacio          | Situació del deute | SI (PENDENT, PAGAT, BAIXA) |  
+| dataIniciPagament          | Data inici del pagament. Format ISO_8601 YYYY-MM-DD | SI |    
+| dataFiPagament          | Data fi del pagament. Format ISO_8601 YYYY-MM-DD | SI |   
+| importDeute          | Import total | SI |  
+| descripcio          | Descripció | SI |    
 | periode | Detalla el període en el que es troba el deute i pot tenir els valors següents | NO (EXECUTIVA, VOLUNTARIA)
 | alerta | Text que permet destacar una alerta a la ciutadania sobre algun aspecte rellevant que cal cridar l’atenció. Per exemple: “La domiciliació ha estat retornada. Si us plau, per evitar recàrrecs realitzi el pagament accedint a l'enllaç” | NO |
 | modalitatPagamentDeute | Detalla la modalitat actual del pagament del deute | NO (CARTA_DE_PAGAMENT, DOMICILIAT, PLA_PERSONALITZAT)
-| importDeute          | Import total | NO |    
 | importPendent          | Import pendent  | NO |    
-| descripcio          | Descripció | NO |    
-| dataIniciPagament          | Data inici del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
-| dataFiPagament          | Data fi del pagament. Format ISO_8601 YYYY-MM-DD | NO |    
 | domiciliat | Indica si el deute està domiciliat o no | NO (true, false)
 | accions | Llista d'objectes de tipus Accio | NO |
 | adjunts | Llista d'objectes de tipus Adjunt | NO |
-
 
 ### Accio
 Objecte per descriure el detall de cada acció associada a tributs o deutes.
@@ -395,8 +398,8 @@ Objecte per descriure el detall de cada acció associada a tributs o deutes.
 
 |       Paràmetre      | Descripció | Obligatori |  
 | ----------------------| --- | --- |  
-| url          | URL de l'acció | NO |  
-| descripcio  | Descripció | NO |  
+| url          | URL de l'acció | SI |  
+| descripcio  | Descripció | SI |  
 | tipus      | Tipus d'acció | NO (DEUTE, TRIBUT, ORGANISME, IDENTIFICADOR) |
 
 
