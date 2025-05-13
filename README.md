@@ -311,7 +311,7 @@ Retorna el detall de dels tributs en haver-se informat un documentIdentificatiu 
 | ----------------------| --- | --- |  
 | idTribut          | Identificador del tribut | SI |    
 | exercici | Any en format YYYY | SI |
-| dataTribut | Data del tribut. Format ISO_8601 YYYY-MM-DD | Data tribut | SI |  
+| dataTribut | Data del tribut. Format ISO_8601 YYYY-MM-DD | SI |  
 | codiINE10      | Codi INE10 de l'Ens emissor de la informació i que s'integra amb el HCC (10 dígits) | SI (si no s'ha informat codiDIR3Organisme) |
 | codiDIR3Organisme | Codi DIR3 de l'Ens emissor de la informació i que s'integra amb el HCC | SI (si no s'ha informat codiINE10) |
 | descripcioTribut | Descripció tribut | SI |
