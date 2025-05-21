@@ -33,8 +33,8 @@ Per a validar els endpoints a preproducció cal:
 - 2 o més expedients del NIF 00000000T (representant de la persona jurídica Q0000000J).
 
 **consultaTributs**
-- 2 o més objectes tributaris del NIF 00000000T que incloguin deutes de diferent tipologia: Pendents (en Voluntària), Pendents (en Executiva), Pagats.
-- 2 o més objectes tributaris del NIF 00000000T (representant de la persona jurídica Q0000000J) que incloguin deutes de diferent tipologia: Pendents (en Voluntària), Pendents (en Executiva), Pagats.
+- 2 o més objectes tributaris del NIF 00000000T que incloguin deutes de diferent tipologia: Pendent, Pagat, Baixa.
+- 2 o més objectes tributaris del NIF 00000000T (representant de la persona jurídica Q0000000J) que incloguin deutes de diferent tipologia:  Pendent, Pagat, Baixa.
 
  
 
@@ -752,7 +752,7 @@ En aquest exemple, la resposta conté dos tributs.
             "deutes": [
                 {
                     "idDeute": "2421553-0000253001",
-                    "situacio": "EXECUTIVA",
+                    "situacio": "PENDENT",
                     "periode": "2023",
                     "importDeute": "8385.84",
                     "importPendent": "3395.36",
