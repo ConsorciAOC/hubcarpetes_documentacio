@@ -758,7 +758,7 @@ En aquest exemple, la resposta conté dos tributs.
                     "importPendent": "3395.36",
                     "descripcio": "IMPOST INCREMENT VALOR DELS TERRENYS DE NATURALESA URBANA. Fraccionat o ajornat",
                     "dataFiPagament": "2021-06-28",                   
-                    "adjuntsDTO": [
+                    "adjunts": [
                         {
                             "idAdjunt": "ADJ001",
                             "uuidDesal": null,
