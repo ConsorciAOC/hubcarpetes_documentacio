@@ -208,6 +208,7 @@ A continuació, trobareu la totalitat de paràmetres previstos actualment en el 
 | numeroRegistre | Número de registre que ha donat origen a l'expedient | NO |  
 | actuacioCiutada | Indica si l'expedient es troba pendent de realitzar alguna acció per part de la ciutadania | NO (SI, NO, NO_APLICA) |   
 | fue | Paràmetre que indica si es tracta d'un expedient FUE. | NO (defecte false, true)
+| adjunts	| Llista d'objectes de tipus Adjunt	| NO
 
 ### Cita Prèvia
 
